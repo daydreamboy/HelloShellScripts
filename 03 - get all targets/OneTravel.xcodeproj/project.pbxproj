@@ -1,0 +1,1557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A09056D1D0FE57600E4F5FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A09056C1D0FE57600E4F5FD /* Assets.xcassets */; };
+		0A0905741D0FE57600E4F5FD /* ONEWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A0905731D0FE57600E4F5FD /* ONEWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0A0905871D0FE57600E4F5FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A0905861D0FE57600E4F5FD /* Assets.xcassets */; };
+		0A09059A1D0FEC0200E4F5FD /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A0905981D0FEC0200E4F5FD /* Interface.storyboard */; };
+		0A0B18071D1BC63900B63FD2 /* ONEWatchCommunicateToiPhoneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B18061D1BC63900B63FD2 /* ONEWatchCommunicateToiPhoneManager.m */; };
+		0A14BB5E1C85DECA00868FFF /* 得实大厦.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A14BB451C85DEC900868FFF /* 得实大厦.gpx */; };
+		0A85635D1D2E3DAB00BF5F06 /* 安宁庄办公点.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563441D2E3DAB00BF5F06 /* 安宁庄办公点.gpx */; };
+		0A85635E1D2E3DAB00BF5F06 /* 北京郊区.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563451D2E3DAB00BF5F06 /* 北京郊区.gpx */; };
+		0A85635F1D2E3DAB00BF5F06 /* 北京西.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563461D2E3DAB00BF5F06 /* 北京西.gpx */; };
+		0A8563601D2E3DAB00BF5F06 /* 成都.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563471D2E3DAB00BF5F06 /* 成都.gpx */; };
+		0A8563611D2E3DAB00BF5F06 /* 重庆.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563481D2E3DAB00BF5F06 /* 重庆.gpx */; };
+		0A8563621D2E3DAB00BF5F06 /* 大连.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563491D2E3DAB00BF5F06 /* 大连.gpx */; };
+		0A8563641D2E3DAB00BF5F06 /* 广州.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A85634B1D2E3DAB00BF5F06 /* 广州.gpx */; };
+		0A8563651D2E3DAB00BF5F06 /* 杭州.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A85634C1D2E3DAB00BF5F06 /* 杭州.gpx */; };
+		0A8563661D2E3DAB00BF5F06 /* 合肥.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A85634D1D2E3DAB00BF5F06 /* 合肥.gpx */; };
+		0A8563671D2E3DAB00BF5F06 /* 回龙观.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A85634E1D2E3DAB00BF5F06 /* 回龙观.gpx */; };
+		0A8563681D2E3DAB00BF5F06 /* 济南.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A85634F1D2E3DAB00BF5F06 /* 济南.gpx */; };
+		0A8563691D2E3DAB00BF5F06 /* 嘉兴.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563501D2E3DAB00BF5F06 /* 嘉兴.gpx */; };
+		0A85636A1D2E3DAB00BF5F06 /* 漯河.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563511D2E3DAB00BF5F06 /* 漯河.gpx */; };
+		0A85636B1D2E3DAB00BF5F06 /* 南京.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563521D2E3DAB00BF5F06 /* 南京.gpx */; };
+		0A85636C1D2E3DAB00BF5F06 /* 上海.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563531D2E3DAB00BF5F06 /* 上海.gpx */; };
+		0A85636D1D2E3DAB00BF5F06 /* 深圳.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563541D2E3DAB00BF5F06 /* 深圳.gpx */; };
+		0A85636E1D2E3DAB00BF5F06 /* 沈阳.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563551D2E3DAB00BF5F06 /* 沈阳.gpx */; };
+		0A85636F1D2E3DAB00BF5F06 /* 苏州.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563561D2E3DAB00BF5F06 /* 苏州.gpx */; };
+		0A8563701D2E3DAB00BF5F06 /* 乌鲁木齐.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563571D2E3DAB00BF5F06 /* 乌鲁木齐.gpx */; };
+		0A8563711D2E3DAB00BF5F06 /* 五道口2100.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563581D2E3DAB00BF5F06 /* 五道口2100.gpx */; };
+		0A8563721D2E3DAB00BF5F06 /* 武汉.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563591D2E3DAB00BF5F06 /* 武汉.gpx */; };
+		0A8563731D2E3DAB00BF5F06 /* 西安.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A85635A1D2E3DAB00BF5F06 /* 西安.gpx */; };
+		0A8563741D2E3DAB00BF5F06 /* 中关村.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A85635B1D2E3DAB00BF5F06 /* 中关村.gpx */; };
+		0A8563751D2E3DAB00BF5F06 /* longze.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A85635C1D2E3DAB00BF5F06 /* longze.gpx */; };
+		0A8563821D2E467000BF5F06 /* ONEAppRemoteConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A85637E1D2E467000BF5F06 /* ONEAppRemoteConfig.json */; };
+		0A8563831D2E467000BF5F06 /* ONEHomeConfigFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A85637F1D2E467000BF5F06 /* ONEHomeConfigFile.json */; };
+		0A8563841D2E467000BF5F06 /* ONEProductConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563801D2E467000BF5F06 /* ONEProductConfig.json */; };
+		0A8563851D2E467000BF5F06 /* Plugins.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8563811D2E467000BF5F06 /* Plugins.json */; };
+		0ABF0FD91D51C90600F8348C /* ONEWatchOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABF0FD81D51C90600F8348C /* ONEWatchOrderModel.m */; };
+		6C1B2B021D156AF1004093E0 /* ONEWatchCommonStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1B2B011D156AF1004093E0 /* ONEWatchCommonStore.m */; };
+		6C9E63B21D153F64007A8F93 /* JZLocationConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63691D153F64007A8F93 /* JZLocationConverter.m */; };
+		6C9E63B31D153F64007A8F93 /* ONEWatchLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E636B1D153F64007A8F93 /* ONEWatchLocationManager.m */; };
+		6C9E63B41D153F64007A8F93 /* ONEWatchPoiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E636D1D153F64007A8F93 /* ONEWatchPoiModel.m */; };
+		6C9E63B51D153F64007A8F93 /* ONEWatchCarTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63711D153F64007A8F93 /* ONEWatchCarTypeModel.m */; };
+		6C9E63B61D153F64007A8F93 /* ONEWatchCommonPOIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63731D153F64007A8F93 /* ONEWatchCommonPOIModel.m */; };
+		6C9E63B71D153F64007A8F93 /* ONEWatchDriversPOIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63751D153F64007A8F93 /* ONEWatchDriversPOIModel.m */; };
+		6C9E63BA1D153F64007A8F93 /* ONEWatchPlanListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E637B1D153F64007A8F93 /* ONEWatchPlanListModel.m */; };
+		6C9E63BB1D153F64007A8F93 /* ONEWatchNetworkStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E637D1D153F64007A8F93 /* ONEWatchNetworkStore.m */; };
+		6C9E63BC1D153F64007A8F93 /* ONEWatchBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63801D153F64007A8F93 /* ONEWatchBaseRequest.m */; };
+		6C9E63BD1D153F64007A8F93 /* ONEWatchCommonPOIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63821D153F64007A8F93 /* ONEWatchCommonPOIRequest.m */; };
+		6C9E63BE1D153F64007A8F93 /* ONEWatchGetDriverLocByIdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63841D153F64007A8F93 /* ONEWatchGetDriverLocByIdRequest.m */; };
+		6C9E63BF1D153F64007A8F93 /* ONEWatchGetDriversLocRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63861D153F64007A8F93 /* ONEWatchGetDriversLocRequest.m */; };
+		6C9E63C01D153F64007A8F93 /* ONEWatchOrderRecoverRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63881D153F64007A8F93 /* ONEWatchOrderRecoverRequest.m */; };
+		6C9E63C11D153F64007A8F93 /* ONEWatchPlanListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E638A1D153F64007A8F93 /* ONEWatchPlanListRequest.m */; };
+		6C9E63C21D153F64007A8F93 /* ONEWatchReverseGEOReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E638C1D153F64007A8F93 /* ONEWatchReverseGEOReqeust.m */; };
+		6C9E63C31D153F64007A8F93 /* ONEWatchTaxiOrderCancelRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E638E1D153F64007A8F93 /* ONEWatchTaxiOrderCancelRequest.m */; };
+		6C9E63C41D153F64007A8F93 /* ONEWatchTaxiOrderCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63901D153F64007A8F93 /* ONEWatchTaxiOrderCreateRequest.m */; };
+		6C9E63C51D153F64007A8F93 /* ONEWatchTaxiOrderDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63921D153F64007A8F93 /* ONEWatchTaxiOrderDetailRequest.m */; };
+		6C9E63C61D153F64007A8F93 /* ONEWatchTaxiOrderRecallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63941D153F64007A8F93 /* ONEWatchTaxiOrderRecallRequest.m */; };
+		6C9E63C81D153F64007A8F93 /* ONEWatchTaxiOrderTerminalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63981D153F64007A8F93 /* ONEWatchTaxiOrderTerminalRequest.m */; };
+		6C9E63C91D153F64007A8F93 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E639B1D153F64007A8F93 /* NotificationController.m */; };
+		6C9E63CB1D153F64007A8F93 /* NSObject+ONEWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63A11D153F64007A8F93 /* NSObject+ONEWatch.m */; };
+		6C9E63D31D153F64007A8F93 /* ONEWatchWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63B11D153F64007A8F93 /* ONEWatchWebImage.m */; };
+		6C9E63E21D153FC4007A8F93 /* ONEWatchCommonDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63D81D153FC4007A8F93 /* ONEWatchCommonDefines.m */; };
+		6C9E63E31D153FC4007A8F93 /* ONEWatchDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63DA1D153FC4007A8F93 /* ONEWatchDataStore.m */; };
+		6C9E63E41D153FC4007A8F93 /* ONEWatchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63DC1D153FC4007A8F93 /* ONEWatchRouter.m */; };
+		6C9E63E51D153FC4007A8F93 /* ONEWatchTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63DE1D153FC4007A8F93 /* ONEWatchTimerManager.m */; };
+		6C9E63E91D153FCD007A8F93 /* ONEWatchNotificationDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63E81D153FCD007A8F93 /* ONEWatchNotificationDefine.m */; };
+		6C9E63EC1D156391007A8F93 /* ONEWatchBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63EB1D156391007A8F93 /* ONEWatchBaseModel.m */; };
+		6C9E63ED1D156391007A8F93 /* ONEWatchBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E63EB1D156391007A8F93 /* ONEWatchBaseModel.m */; };
+		6CADC14F1D1256AB00EE1373 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC0D41D1256AB00EE1373 /* ExtensionDelegate.m */; };
+		6CADC1501D1256AB00EE1373 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC0D71D1256AB00EE1373 /* GlanceController.m */; };
+		6CADC1511D1256AB00EE1373 /* ONEWatchGlanceInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC0D91D1256AB00EE1373 /* ONEWatchGlanceInfoModel.m */; };
+		6CADC1521D1256AB00EE1373 /* ONEWatchGlanceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC0DB1D1256AB00EE1373 /* ONEWatchGlanceViewModel.m */; };
+		6CADC1751D1256AB00EE1373 /* ONEWatchArrivedInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC12A1D1256AB00EE1373 /* ONEWatchArrivedInterfaceController.m */; };
+		6CADC1761D1256AB00EE1373 /* ONEWatchCarTypeListInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC12D1D1256AB00EE1373 /* ONEWatchCarTypeListInterfaceController.m */; };
+		6CADC1771D1256AB00EE1373 /* ONEWatchCarTypeRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC12F1D1256AB00EE1373 /* ONEWatchCarTypeRowController.m */; };
+		6CADC1781D1256AB00EE1373 /* ONEWatchHomePageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC1321D1256AB00EE1373 /* ONEWatchHomePageInfoModel.m */; };
+		6CADC1791D1256AB00EE1373 /* ONEWatchOneAddressForCallCarInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC1341D1256AB00EE1373 /* ONEWatchOneAddressForCallCarInterfaceController.m */; };
+		6CADC17A1D1256AB00EE1373 /* ONEWatchTwoAddressForCallCarInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC1361D1256AB00EE1373 /* ONEWatchTwoAddressForCallCarInterfaceController.m */; };
+		6CADC17B1D1256AB00EE1373 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC1381D1256AB00EE1373 /* InterfaceController.m */; };
+		6CADC17C1D1256AB00EE1373 /* ONEWatchBaseInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC13A1D1256AB00EE1373 /* ONEWatchBaseInterfaceController.m */; };
+		6CADC17D1D1256AB00EE1373 /* ONEWatchTravelingInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC13D1D1256AB00EE1373 /* ONEWatchTravelingInfoModel.m */; };
+		6CADC17E1D1256AB00EE1373 /* ONEWatchTravelingInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC13F1D1256AB00EE1373 /* ONEWatchTravelingInterfaceController.m */; };
+		6CADC17F1D1256AB00EE1373 /* ONEWatchWaitingPickInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC1421D1256AB00EE1373 /* ONEWatchWaitingPickInfoModel.m */; };
+		6CADC1801D1256AB00EE1373 /* ONEWatchWaitingPickInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC1441D1256AB00EE1373 /* ONEWatchWaitingPickInterfaceController.m */; };
+		6CADC1811D1256AB00EE1373 /* ONEWatchWaitingResponseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC1471D1256AB00EE1373 /* ONEWatchWaitingResponseInfoModel.m */; };
+		6CADC1821D1256AB00EE1373 /* ONEWatchWaitingResponseInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC1491D1256AB00EE1373 /* ONEWatchWaitingResponseInterfaceController.m */; };
+		6CADC1831D1256AB00EE1373 /* ONEWatchWaitPayInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC14C1D1256AB00EE1373 /* ONEWatchWaitPayInfoModel.m */; };
+		6CADC1841D1256AB00EE1373 /* ONEWatchWaitPayInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC14E1D1256AB00EE1373 /* ONEWatchWaitPayInterfaceController.m */; };
+		6CD7052B1D1FC6D000CE9742 /* NSObject+WatchCheckEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD7052A1D1FC6D000CE9742 /* NSObject+WatchCheckEmpty.m */; };
+		6CE51C901D157263006BE843 /* ONEWatchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE51C8F1D157263006BE843 /* ONEWatchAlert.m */; };
+		6CE51C931D15AF4B006BE843 /* NSString+WatchEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE51C921D15AF4B006BE843 /* NSString+WatchEncrypt.m */; };
+		6CE51C961D15B754006BE843 /* ONEWatchProductItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE51C951D15B754006BE843 /* ONEWatchProductItem.m */; };
+		74CD16FF1B7B7A6B00C0D3B2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CD16FE1B7B7A6B00C0D3B2 /* CoreTelephony.framework */; };
+		74CD17011B7B7A7E00C0D3B2 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CD17001B7B7A7E00C0D3B2 /* libicucore.dylib */; };
+		74CD17031B7B7A8700C0D3B2 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CD17021B7B7A8700C0D3B2 /* libz.1.2.5.dylib */; };
+		74CD17051B7B7A8F00C0D3B2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CD17041B7B7A8F00C0D3B2 /* Security.framework */; };
+		74CD17091B7B7AAC00C0D3B2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CD17081B7B7AAC00C0D3B2 /* CoreText.framework */; };
+		9B5DE6D078770857FE2D43DE /* libPods-OneTravel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F7877230EBC4BD0833BC48 /* libPods-OneTravel.a */; };
+		E43F2EAC1B70B35800389CF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E43F2EAB1B70B35800389CF0 /* AppDelegate.m */; };
+		E44093C41B7C41490001D32F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44093C31B7C41490001D32F /* OpenAL.framework */; };
+		E44093C61B7C41520001D32F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44093C51B7C41520001D32F /* AudioToolbox.framework */; };
+		E4BC59251B7DD5C30097485A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BC59241B7DD5C30097485A /* MessageUI.framework */; };
+		E4E70BB41B8EA8C3006D06B9 /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = E4E70BB31B8EA8C3006D06B9 /* cert.cer */; };
+		EA6E071F1B40E2980035DA22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E071E1B40E2980035DA22 /* main.m */; };
+		EA6E072A1B40E2980035DA22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA6E07291B40E2980035DA22 /* Images.xcassets */; };
+		EADCA4181B40FAAB0074C961 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADCA4171B40FAAB0074C961 /* QuartzCore.framework */; };
+		EADCA41A1B40FAB20074C961 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADCA4191B40FAB20074C961 /* SystemConfiguration.framework */; };
+		EADCA41C1B40FABD0074C961 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADCA41B1B40FABD0074C961 /* CoreLocation.framework */; };
+		EADCA4221B40FCCE0074C961 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EADCA4211B40FCCE0074C961 /* libc++.dylib */; };
+		EADCA4231B40FCE50074C961 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EADCA41F1B40FACA0074C961 /* libstdc++.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A0905751D0FE57600E4F5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA6E07111B40E2980035DA22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A0905721D0FE57600E4F5FD;
+			remoteInfo = "ONEWatch Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0A0905901D0FE57600E4F5FD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0A0905741D0FE57600E4F5FD /* ONEWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A0905671D0FE57600E4F5FD /* ONEWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ONEWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A09056C1D0FE57600E4F5FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A09056E1D0FE57600E4F5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A0905731D0FE57600E4F5FD /* ONEWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ONEWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A0905791D0FE57600E4F5FD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0A0905861D0FE57600E4F5FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A0905881D0FE57600E4F5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A0905991D0FEC0200E4F5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		0A0B18051D1BC63900B63FD2 /* ONEWatchCommunicateToiPhoneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchCommunicateToiPhoneManager.h; sourceTree = "<group>"; };
+		0A0B18061D1BC63900B63FD2 /* ONEWatchCommunicateToiPhoneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchCommunicateToiPhoneManager.m; sourceTree = "<group>"; };
+		0A14BB451C85DEC900868FFF /* 得实大厦.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "得实大厦.gpx"; path = "gpx/得实大厦.gpx"; sourceTree = "<group>"; };
+		0A8563441D2E3DAB00BF5F06 /* 安宁庄办公点.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "安宁庄办公点.gpx"; path = "gpx/安宁庄办公点.gpx"; sourceTree = "<group>"; };
+		0A8563451D2E3DAB00BF5F06 /* 北京郊区.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "北京郊区.gpx"; path = "gpx/北京郊区.gpx"; sourceTree = "<group>"; };
+		0A8563461D2E3DAB00BF5F06 /* 北京西.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "北京西.gpx"; path = "gpx/北京西.gpx"; sourceTree = "<group>"; };
+		0A8563471D2E3DAB00BF5F06 /* 成都.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "成都.gpx"; path = "gpx/成都.gpx"; sourceTree = "<group>"; };
+		0A8563481D2E3DAB00BF5F06 /* 重庆.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "重庆.gpx"; path = "gpx/重庆.gpx"; sourceTree = "<group>"; };
+		0A8563491D2E3DAB00BF5F06 /* 大连.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "大连.gpx"; path = "gpx/大连.gpx"; sourceTree = "<group>"; };
+		0A85634B1D2E3DAB00BF5F06 /* 广州.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "广州.gpx"; path = "gpx/广州.gpx"; sourceTree = "<group>"; };
+		0A85634C1D2E3DAB00BF5F06 /* 杭州.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "杭州.gpx"; path = "gpx/杭州.gpx"; sourceTree = "<group>"; };
+		0A85634D1D2E3DAB00BF5F06 /* 合肥.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "合肥.gpx"; path = "gpx/合肥.gpx"; sourceTree = "<group>"; };
+		0A85634E1D2E3DAB00BF5F06 /* 回龙观.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "回龙观.gpx"; path = "gpx/回龙观.gpx"; sourceTree = "<group>"; };
+		0A85634F1D2E3DAB00BF5F06 /* 济南.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "济南.gpx"; path = "gpx/济南.gpx"; sourceTree = "<group>"; };
+		0A8563501D2E3DAB00BF5F06 /* 嘉兴.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "嘉兴.gpx"; path = "gpx/嘉兴.gpx"; sourceTree = "<group>"; };
+		0A8563511D2E3DAB00BF5F06 /* 漯河.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "漯河.gpx"; path = "gpx/漯河.gpx"; sourceTree = "<group>"; };
+		0A8563521D2E3DAB00BF5F06 /* 南京.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "南京.gpx"; path = "gpx/南京.gpx"; sourceTree = "<group>"; };
+		0A8563531D2E3DAB00BF5F06 /* 上海.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "上海.gpx"; path = "gpx/上海.gpx"; sourceTree = "<group>"; };
+		0A8563541D2E3DAB00BF5F06 /* 深圳.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "深圳.gpx"; path = "gpx/深圳.gpx"; sourceTree = "<group>"; };
+		0A8563551D2E3DAB00BF5F06 /* 沈阳.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "沈阳.gpx"; path = "gpx/沈阳.gpx"; sourceTree = "<group>"; };
+		0A8563561D2E3DAB00BF5F06 /* 苏州.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "苏州.gpx"; path = "gpx/苏州.gpx"; sourceTree = "<group>"; };
+		0A8563571D2E3DAB00BF5F06 /* 乌鲁木齐.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "乌鲁木齐.gpx"; path = "gpx/乌鲁木齐.gpx"; sourceTree = "<group>"; };
+		0A8563581D2E3DAB00BF5F06 /* 五道口2100.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "五道口2100.gpx"; path = "gpx/五道口2100.gpx"; sourceTree = "<group>"; };
+		0A8563591D2E3DAB00BF5F06 /* 武汉.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "武汉.gpx"; path = "gpx/武汉.gpx"; sourceTree = "<group>"; };
+		0A85635A1D2E3DAB00BF5F06 /* 西安.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "西安.gpx"; path = "gpx/西安.gpx"; sourceTree = "<group>"; };
+		0A85635B1D2E3DAB00BF5F06 /* 中关村.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "中关村.gpx"; path = "gpx/中关村.gpx"; sourceTree = "<group>"; };
+		0A85635C1D2E3DAB00BF5F06 /* longze.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = longze.gpx; path = gpx/longze.gpx; sourceTree = "<group>"; };
+		0A85637E1D2E467000BF5F06 /* ONEAppRemoteConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ONEAppRemoteConfig.json; sourceTree = "<group>"; };
+		0A85637F1D2E467000BF5F06 /* ONEHomeConfigFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ONEHomeConfigFile.json; sourceTree = "<group>"; };
+		0A8563801D2E467000BF5F06 /* ONEProductConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ONEProductConfig.json; sourceTree = "<group>"; };
+		0A8563811D2E467000BF5F06 /* Plugins.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Plugins.json; sourceTree = "<group>"; };
+		0ABF0FD71D51C90600F8348C /* ONEWatchOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchOrderModel.h; sourceTree = "<group>"; };
+		0ABF0FD81D51C90600F8348C /* ONEWatchOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchOrderModel.m; sourceTree = "<group>"; };
+		3805FE64EF7A4C9B4BE63A15 /* Pods-OneTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneTravel/Pods-OneTravel.debug.xcconfig"; sourceTree = "<group>"; };
+		39F7877230EBC4BD0833BC48 /* libPods-OneTravel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OneTravel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C1B2B001D156AF1004093E0 /* ONEWatchCommonStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchCommonStore.h; sourceTree = "<group>"; };
+		6C1B2B011D156AF1004093E0 /* ONEWatchCommonStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchCommonStore.m; sourceTree = "<group>"; };
+		6C9E63681D153F64007A8F93 /* JZLocationConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZLocationConverter.h; sourceTree = "<group>"; };
+		6C9E63691D153F64007A8F93 /* JZLocationConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZLocationConverter.m; sourceTree = "<group>"; };
+		6C9E636A1D153F64007A8F93 /* ONEWatchLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchLocationManager.h; sourceTree = "<group>"; };
+		6C9E636B1D153F64007A8F93 /* ONEWatchLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchLocationManager.m; sourceTree = "<group>"; };
+		6C9E636C1D153F64007A8F93 /* ONEWatchPoiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchPoiModel.h; sourceTree = "<group>"; };
+		6C9E636D1D153F64007A8F93 /* ONEWatchPoiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchPoiModel.m; sourceTree = "<group>"; };
+		6C9E63701D153F64007A8F93 /* ONEWatchCarTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchCarTypeModel.h; sourceTree = "<group>"; };
+		6C9E63711D153F64007A8F93 /* ONEWatchCarTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchCarTypeModel.m; sourceTree = "<group>"; };
+		6C9E63721D153F64007A8F93 /* ONEWatchCommonPOIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchCommonPOIModel.h; sourceTree = "<group>"; };
+		6C9E63731D153F64007A8F93 /* ONEWatchCommonPOIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchCommonPOIModel.m; sourceTree = "<group>"; };
+		6C9E63741D153F64007A8F93 /* ONEWatchDriversPOIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchDriversPOIModel.h; sourceTree = "<group>"; };
+		6C9E63751D153F64007A8F93 /* ONEWatchDriversPOIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchDriversPOIModel.m; sourceTree = "<group>"; };
+		6C9E637A1D153F64007A8F93 /* ONEWatchPlanListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchPlanListModel.h; sourceTree = "<group>"; };
+		6C9E637B1D153F64007A8F93 /* ONEWatchPlanListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchPlanListModel.m; sourceTree = "<group>"; };
+		6C9E637C1D153F64007A8F93 /* ONEWatchNetworkStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchNetworkStore.h; sourceTree = "<group>"; };
+		6C9E637D1D153F64007A8F93 /* ONEWatchNetworkStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchNetworkStore.m; sourceTree = "<group>"; };
+		6C9E637F1D153F64007A8F93 /* ONEWatchBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchBaseRequest.h; sourceTree = "<group>"; };
+		6C9E63801D153F64007A8F93 /* ONEWatchBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchBaseRequest.m; sourceTree = "<group>"; };
+		6C9E63811D153F64007A8F93 /* ONEWatchCommonPOIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchCommonPOIRequest.h; sourceTree = "<group>"; };
+		6C9E63821D153F64007A8F93 /* ONEWatchCommonPOIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchCommonPOIRequest.m; sourceTree = "<group>"; };
+		6C9E63831D153F64007A8F93 /* ONEWatchGetDriverLocByIdRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchGetDriverLocByIdRequest.h; sourceTree = "<group>"; };
+		6C9E63841D153F64007A8F93 /* ONEWatchGetDriverLocByIdRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchGetDriverLocByIdRequest.m; sourceTree = "<group>"; };
+		6C9E63851D153F64007A8F93 /* ONEWatchGetDriversLocRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchGetDriversLocRequest.h; sourceTree = "<group>"; };
+		6C9E63861D153F64007A8F93 /* ONEWatchGetDriversLocRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchGetDriversLocRequest.m; sourceTree = "<group>"; };
+		6C9E63871D153F64007A8F93 /* ONEWatchOrderRecoverRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchOrderRecoverRequest.h; sourceTree = "<group>"; };
+		6C9E63881D153F64007A8F93 /* ONEWatchOrderRecoverRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchOrderRecoverRequest.m; sourceTree = "<group>"; };
+		6C9E63891D153F64007A8F93 /* ONEWatchPlanListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchPlanListRequest.h; sourceTree = "<group>"; };
+		6C9E638A1D153F64007A8F93 /* ONEWatchPlanListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchPlanListRequest.m; sourceTree = "<group>"; };
+		6C9E638B1D153F64007A8F93 /* ONEWatchReverseGEOReqeust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchReverseGEOReqeust.h; sourceTree = "<group>"; };
+		6C9E638C1D153F64007A8F93 /* ONEWatchReverseGEOReqeust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchReverseGEOReqeust.m; sourceTree = "<group>"; };
+		6C9E638D1D153F64007A8F93 /* ONEWatchTaxiOrderCancelRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchTaxiOrderCancelRequest.h; sourceTree = "<group>"; };
+		6C9E638E1D153F64007A8F93 /* ONEWatchTaxiOrderCancelRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchTaxiOrderCancelRequest.m; sourceTree = "<group>"; };
+		6C9E638F1D153F64007A8F93 /* ONEWatchTaxiOrderCreateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchTaxiOrderCreateRequest.h; sourceTree = "<group>"; };
+		6C9E63901D153F64007A8F93 /* ONEWatchTaxiOrderCreateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchTaxiOrderCreateRequest.m; sourceTree = "<group>"; };
+		6C9E63911D153F64007A8F93 /* ONEWatchTaxiOrderDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchTaxiOrderDetailRequest.h; sourceTree = "<group>"; };
+		6C9E63921D153F64007A8F93 /* ONEWatchTaxiOrderDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchTaxiOrderDetailRequest.m; sourceTree = "<group>"; };
+		6C9E63931D153F64007A8F93 /* ONEWatchTaxiOrderRecallRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchTaxiOrderRecallRequest.h; sourceTree = "<group>"; };
+		6C9E63941D153F64007A8F93 /* ONEWatchTaxiOrderRecallRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchTaxiOrderRecallRequest.m; sourceTree = "<group>"; };
+		6C9E63971D153F64007A8F93 /* ONEWatchTaxiOrderTerminalRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchTaxiOrderTerminalRequest.h; sourceTree = "<group>"; };
+		6C9E63981D153F64007A8F93 /* ONEWatchTaxiOrderTerminalRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchTaxiOrderTerminalRequest.m; sourceTree = "<group>"; };
+		6C9E639A1D153F64007A8F93 /* NotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		6C9E639B1D153F64007A8F93 /* NotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		6C9E63A01D153F64007A8F93 /* NSObject+ONEWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ONEWatch.h"; sourceTree = "<group>"; };
+		6C9E63A11D153F64007A8F93 /* NSObject+ONEWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ONEWatch.m"; sourceTree = "<group>"; };
+		6C9E63B01D153F64007A8F93 /* ONEWatchWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchWebImage.h; sourceTree = "<group>"; };
+		6C9E63B11D153F64007A8F93 /* ONEWatchWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchWebImage.m; sourceTree = "<group>"; };
+		6C9E63D71D153FC4007A8F93 /* ONEWatchCommonDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchCommonDefines.h; sourceTree = "<group>"; };
+		6C9E63D81D153FC4007A8F93 /* ONEWatchCommonDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchCommonDefines.m; sourceTree = "<group>"; };
+		6C9E63D91D153FC4007A8F93 /* ONEWatchDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchDataStore.h; sourceTree = "<group>"; };
+		6C9E63DA1D153FC4007A8F93 /* ONEWatchDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchDataStore.m; sourceTree = "<group>"; };
+		6C9E63DB1D153FC4007A8F93 /* ONEWatchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchRouter.h; sourceTree = "<group>"; };
+		6C9E63DC1D153FC4007A8F93 /* ONEWatchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchRouter.m; sourceTree = "<group>"; };
+		6C9E63DD1D153FC4007A8F93 /* ONEWatchTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchTimerManager.h; sourceTree = "<group>"; };
+		6C9E63DE1D153FC4007A8F93 /* ONEWatchTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchTimerManager.m; sourceTree = "<group>"; };
+		6C9E63E71D153FCD007A8F93 /* ONEWatchNotificationDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchNotificationDefine.h; sourceTree = "<group>"; };
+		6C9E63E81D153FCD007A8F93 /* ONEWatchNotificationDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchNotificationDefine.m; sourceTree = "<group>"; };
+		6C9E63EA1D156391007A8F93 /* ONEWatchBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchBaseModel.h; sourceTree = "<group>"; };
+		6C9E63EB1D156391007A8F93 /* ONEWatchBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchBaseModel.m; sourceTree = "<group>"; };
+		6CADC0D31D1256AB00EE1373 /* ExtensionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		6CADC0D41D1256AB00EE1373 /* ExtensionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		6CADC0D61D1256AB00EE1373 /* GlanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		6CADC0D71D1256AB00EE1373 /* GlanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		6CADC0D81D1256AB00EE1373 /* ONEWatchGlanceInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchGlanceInfoModel.h; sourceTree = "<group>"; };
+		6CADC0D91D1256AB00EE1373 /* ONEWatchGlanceInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchGlanceInfoModel.m; sourceTree = "<group>"; };
+		6CADC0DA1D1256AB00EE1373 /* ONEWatchGlanceViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchGlanceViewModel.h; sourceTree = "<group>"; };
+		6CADC0DB1D1256AB00EE1373 /* ONEWatchGlanceViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchGlanceViewModel.m; sourceTree = "<group>"; };
+		6CADC1291D1256AB00EE1373 /* ONEWatchArrivedInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchArrivedInterfaceController.h; sourceTree = "<group>"; };
+		6CADC12A1D1256AB00EE1373 /* ONEWatchArrivedInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchArrivedInterfaceController.m; sourceTree = "<group>"; };
+		6CADC12C1D1256AB00EE1373 /* ONEWatchCarTypeListInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchCarTypeListInterfaceController.h; sourceTree = "<group>"; };
+		6CADC12D1D1256AB00EE1373 /* ONEWatchCarTypeListInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchCarTypeListInterfaceController.m; sourceTree = "<group>"; };
+		6CADC12E1D1256AB00EE1373 /* ONEWatchCarTypeRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchCarTypeRowController.h; sourceTree = "<group>"; };
+		6CADC12F1D1256AB00EE1373 /* ONEWatchCarTypeRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchCarTypeRowController.m; sourceTree = "<group>"; };
+		6CADC1311D1256AB00EE1373 /* ONEWatchHomePageInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchHomePageInfoModel.h; sourceTree = "<group>"; };
+		6CADC1321D1256AB00EE1373 /* ONEWatchHomePageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchHomePageInfoModel.m; sourceTree = "<group>"; };
+		6CADC1331D1256AB00EE1373 /* ONEWatchOneAddressForCallCarInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchOneAddressForCallCarInterfaceController.h; sourceTree = "<group>"; };
+		6CADC1341D1256AB00EE1373 /* ONEWatchOneAddressForCallCarInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchOneAddressForCallCarInterfaceController.m; sourceTree = "<group>"; };
+		6CADC1351D1256AB00EE1373 /* ONEWatchTwoAddressForCallCarInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchTwoAddressForCallCarInterfaceController.h; sourceTree = "<group>"; };
+		6CADC1361D1256AB00EE1373 /* ONEWatchTwoAddressForCallCarInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchTwoAddressForCallCarInterfaceController.m; sourceTree = "<group>"; };
+		6CADC1371D1256AB00EE1373 /* InterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		6CADC1381D1256AB00EE1373 /* InterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		6CADC1391D1256AB00EE1373 /* ONEWatchBaseInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchBaseInterfaceController.h; sourceTree = "<group>"; };
+		6CADC13A1D1256AB00EE1373 /* ONEWatchBaseInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchBaseInterfaceController.m; sourceTree = "<group>"; };
+		6CADC13C1D1256AB00EE1373 /* ONEWatchTravelingInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchTravelingInfoModel.h; sourceTree = "<group>"; };
+		6CADC13D1D1256AB00EE1373 /* ONEWatchTravelingInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchTravelingInfoModel.m; sourceTree = "<group>"; };
+		6CADC13E1D1256AB00EE1373 /* ONEWatchTravelingInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchTravelingInterfaceController.h; sourceTree = "<group>"; };
+		6CADC13F1D1256AB00EE1373 /* ONEWatchTravelingInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchTravelingInterfaceController.m; sourceTree = "<group>"; };
+		6CADC1411D1256AB00EE1373 /* ONEWatchWaitingPickInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchWaitingPickInfoModel.h; sourceTree = "<group>"; };
+		6CADC1421D1256AB00EE1373 /* ONEWatchWaitingPickInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchWaitingPickInfoModel.m; sourceTree = "<group>"; };
+		6CADC1431D1256AB00EE1373 /* ONEWatchWaitingPickInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchWaitingPickInterfaceController.h; sourceTree = "<group>"; };
+		6CADC1441D1256AB00EE1373 /* ONEWatchWaitingPickInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchWaitingPickInterfaceController.m; sourceTree = "<group>"; };
+		6CADC1461D1256AB00EE1373 /* ONEWatchWaitingResponseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchWaitingResponseInfoModel.h; sourceTree = "<group>"; };
+		6CADC1471D1256AB00EE1373 /* ONEWatchWaitingResponseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchWaitingResponseInfoModel.m; sourceTree = "<group>"; };
+		6CADC1481D1256AB00EE1373 /* ONEWatchWaitingResponseInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchWaitingResponseInterfaceController.h; sourceTree = "<group>"; };
+		6CADC1491D1256AB00EE1373 /* ONEWatchWaitingResponseInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchWaitingResponseInterfaceController.m; sourceTree = "<group>"; };
+		6CADC14B1D1256AB00EE1373 /* ONEWatchWaitPayInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchWaitPayInfoModel.h; sourceTree = "<group>"; };
+		6CADC14C1D1256AB00EE1373 /* ONEWatchWaitPayInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchWaitPayInfoModel.m; sourceTree = "<group>"; };
+		6CADC14D1D1256AB00EE1373 /* ONEWatchWaitPayInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchWaitPayInterfaceController.h; sourceTree = "<group>"; };
+		6CADC14E1D1256AB00EE1373 /* ONEWatchWaitPayInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchWaitPayInterfaceController.m; sourceTree = "<group>"; };
+		6CD705291D1FC6D000CE9742 /* NSObject+WatchCheckEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WatchCheckEmpty.h"; sourceTree = "<group>"; };
+		6CD7052A1D1FC6D000CE9742 /* NSObject+WatchCheckEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WatchCheckEmpty.m"; sourceTree = "<group>"; };
+		6CE51C8E1D157263006BE843 /* ONEWatchAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchAlert.h; sourceTree = "<group>"; };
+		6CE51C8F1D157263006BE843 /* ONEWatchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchAlert.m; sourceTree = "<group>"; };
+		6CE51C911D15AF4B006BE843 /* NSString+WatchEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WatchEncrypt.h"; sourceTree = "<group>"; };
+		6CE51C921D15AF4B006BE843 /* NSString+WatchEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WatchEncrypt.m"; sourceTree = "<group>"; };
+		6CE51C941D15B754006BE843 /* ONEWatchProductItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONEWatchProductItem.h; sourceTree = "<group>"; };
+		6CE51C951D15B754006BE843 /* ONEWatchProductItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEWatchProductItem.m; sourceTree = "<group>"; };
+		74CD16FE1B7B7A6B00C0D3B2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		74CD17001B7B7A7E00C0D3B2 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		74CD17021B7B7A8700C0D3B2 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		74CD17041B7B7A8F00C0D3B2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		74CD17061B7B7A9600C0D3B2 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		74CD17081B7B7AAC00C0D3B2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		99322E271B4A2BE100E364BF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A7E7EEE13440E45410F86331 /* Pods-OneTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneTravel/Pods-OneTravel.release.xcconfig"; sourceTree = "<group>"; };
+		A8415E3245D028C8465192A8 /* Pods-OneTravel.releasebeta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneTravel.releasebeta.xcconfig"; path = "Pods/Target Support Files/Pods-OneTravel/Pods-OneTravel.releasebeta.xcconfig"; sourceTree = "<group>"; };
+		E43F2EAA1B70B35800389CF0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AppDelegate/AppDelegate.h; sourceTree = "<group>"; };
+		E43F2EAB1B70B35800389CF0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = AppDelegate/AppDelegate.m; sourceTree = "<group>"; };
+		E44093C31B7C41490001D32F /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		E44093C51B7C41520001D32F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E4BC59241B7DD5C30097485A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E4E70BB31B8EA8C3006D06B9 /* cert.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert.cer; sourceTree = "<group>"; };
+		EA6E07191B40E2980035DA22 /* OneTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA6E071D1B40E2980035DA22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA6E071E1B40E2980035DA22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA6E07291B40E2980035DA22 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EA6E072C1B40E2980035DA22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EADCA2071B40F7990074C961 /* OneTravel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneTravel-Prefix.pch"; sourceTree = "<group>"; };
+		EADCA4171B40FAAB0074C961 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EADCA4191B40FAB20074C961 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EADCA41B1B40FABD0074C961 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EADCA41D1B40FAC40074C961 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		EADCA41F1B40FACA0074C961 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		EADCA4211B40FCCE0074C961 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A0905701D0FE57600E4F5FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA6E07161B40E2980035DA22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BC59251B7DD5C30097485A /* MessageUI.framework in Frameworks */,
+				E44093C61B7C41520001D32F /* AudioToolbox.framework in Frameworks */,
+				E44093C41B7C41490001D32F /* OpenAL.framework in Frameworks */,
+				74CD17091B7B7AAC00C0D3B2 /* CoreText.framework in Frameworks */,
+				EADCA4231B40FCE50074C961 /* libstdc++.dylib in Frameworks */,
+				74CD17051B7B7A8F00C0D3B2 /* Security.framework in Frameworks */,
+				74CD17031B7B7A8700C0D3B2 /* libz.1.2.5.dylib in Frameworks */,
+				74CD17011B7B7A7E00C0D3B2 /* libicucore.dylib in Frameworks */,
+				74CD16FF1B7B7A6B00C0D3B2 /* CoreTelephony.framework in Frameworks */,
+				EADCA4221B40FCCE0074C961 /* libc++.dylib in Frameworks */,
+				EADCA41C1B40FABD0074C961 /* CoreLocation.framework in Frameworks */,
+				EADCA4181B40FAAB0074C961 /* QuartzCore.framework in Frameworks */,
+				EADCA41A1B40FAB20074C961 /* SystemConfiguration.framework in Frameworks */,
+				9B5DE6D078770857FE2D43DE /* libPods-OneTravel.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76398914070E137B0E1B807 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A0905681D0FE57600E4F5FD /* ONEWatch */ = {
+			isa = PBXGroup;
+			children = (
+				0A0905981D0FEC0200E4F5FD /* Interface.storyboard */,
+				0A09056C1D0FE57600E4F5FD /* Assets.xcassets */,
+				0A09056E1D0FE57600E4F5FD /* Info.plist */,
+			);
+			path = ONEWatch;
+			sourceTree = "<group>";
+		};
+		0A0905771D0FE57600E4F5FD /* ONEWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC0D21D1256AB00EE1373 /* Classes */,
+				0A0905781D0FE57600E4F5FD /* Supporting Files */,
+				0A0905881D0FE57600E4F5FD /* Info.plist */,
+				0A0905861D0FE57600E4F5FD /* Assets.xcassets */,
+			);
+			path = "ONEWatch Extension";
+			sourceTree = "<group>";
+		};
+		0A0905781D0FE57600E4F5FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A0905791D0FE57600E4F5FD /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0A85637D1D2E467000BF5F06 /* ConfigData */ = {
+			isa = PBXGroup;
+			children = (
+				0A85637E1D2E467000BF5F06 /* ONEAppRemoteConfig.json */,
+				0A85637F1D2E467000BF5F06 /* ONEHomeConfigFile.json */,
+				0A8563801D2E467000BF5F06 /* ONEProductConfig.json */,
+				0A8563811D2E467000BF5F06 /* Plugins.json */,
+			);
+			path = ConfigData;
+			sourceTree = "<group>";
+		};
+		6AB58A3654FB76D3C3421262 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4BC59241B7DD5C30097485A /* MessageUI.framework */,
+				E44093C51B7C41520001D32F /* AudioToolbox.framework */,
+				E44093C31B7C41490001D32F /* OpenAL.framework */,
+				74CD17081B7B7AAC00C0D3B2 /* CoreText.framework */,
+				74CD17061B7B7A9600C0D3B2 /* JavaScriptCore.framework */,
+				74CD17041B7B7A8F00C0D3B2 /* Security.framework */,
+				74CD17021B7B7A8700C0D3B2 /* libz.1.2.5.dylib */,
+				74CD17001B7B7A7E00C0D3B2 /* libicucore.dylib */,
+				74CD16FE1B7B7A6B00C0D3B2 /* CoreTelephony.framework */,
+				EADCA4211B40FCCE0074C961 /* libc++.dylib */,
+				EADCA41F1B40FACA0074C961 /* libstdc++.dylib */,
+				EADCA41D1B40FAC40074C961 /* libstdc++.6.0.9.dylib */,
+				EADCA41B1B40FABD0074C961 /* CoreLocation.framework */,
+				EADCA4191B40FAB20074C961 /* SystemConfiguration.framework */,
+				EADCA4171B40FAAB0074C961 /* QuartzCore.framework */,
+				39F7877230EBC4BD0833BC48 /* libPods-OneTravel.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C9E63661D153F64007A8F93 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				6C9E63D41D153FC4007A8F93 /* Common */,
+				6C9E63671D153F64007A8F93 /* Location */,
+				6C9E636E1D153F64007A8F93 /* Networking */,
+				6C9E63991D153F64007A8F93 /* Notification */,
+				6C9E639C1D153F64007A8F93 /* CommunicateToiPhone */,
+				6C9E639F1D153F64007A8F93 /* Utils */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		6C9E63671D153F64007A8F93 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				6C9E63681D153F64007A8F93 /* JZLocationConverter.h */,
+				6C9E63691D153F64007A8F93 /* JZLocationConverter.m */,
+				6C9E636A1D153F64007A8F93 /* ONEWatchLocationManager.h */,
+				6C9E636B1D153F64007A8F93 /* ONEWatchLocationManager.m */,
+				6C9E636C1D153F64007A8F93 /* ONEWatchPoiModel.h */,
+				6C9E636D1D153F64007A8F93 /* ONEWatchPoiModel.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		6C9E636E1D153F64007A8F93 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6C9E636F1D153F64007A8F93 /* Models */,
+				6C9E637C1D153F64007A8F93 /* ONEWatchNetworkStore.h */,
+				6C9E637D1D153F64007A8F93 /* ONEWatchNetworkStore.m */,
+				6C9E637E1D153F64007A8F93 /* Requests */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6C9E636F1D153F64007A8F93 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6C9E63EA1D156391007A8F93 /* ONEWatchBaseModel.h */,
+				6C9E63EB1D156391007A8F93 /* ONEWatchBaseModel.m */,
+				6C9E63701D153F64007A8F93 /* ONEWatchCarTypeModel.h */,
+				6C9E63711D153F64007A8F93 /* ONEWatchCarTypeModel.m */,
+				6C9E63721D153F64007A8F93 /* ONEWatchCommonPOIModel.h */,
+				6C9E63731D153F64007A8F93 /* ONEWatchCommonPOIModel.m */,
+				6C9E63741D153F64007A8F93 /* ONEWatchDriversPOIModel.h */,
+				6C9E63751D153F64007A8F93 /* ONEWatchDriversPOIModel.m */,
+				0ABF0FD71D51C90600F8348C /* ONEWatchOrderModel.h */,
+				0ABF0FD81D51C90600F8348C /* ONEWatchOrderModel.m */,
+				6C9E637A1D153F64007A8F93 /* ONEWatchPlanListModel.h */,
+				6C9E637B1D153F64007A8F93 /* ONEWatchPlanListModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6C9E637E1D153F64007A8F93 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				6C9E637F1D153F64007A8F93 /* ONEWatchBaseRequest.h */,
+				6C9E63801D153F64007A8F93 /* ONEWatchBaseRequest.m */,
+				6C9E63811D153F64007A8F93 /* ONEWatchCommonPOIRequest.h */,
+				6C9E63821D153F64007A8F93 /* ONEWatchCommonPOIRequest.m */,
+				6C9E63831D153F64007A8F93 /* ONEWatchGetDriverLocByIdRequest.h */,
+				6C9E63841D153F64007A8F93 /* ONEWatchGetDriverLocByIdRequest.m */,
+				6C9E63851D153F64007A8F93 /* ONEWatchGetDriversLocRequest.h */,
+				6C9E63861D153F64007A8F93 /* ONEWatchGetDriversLocRequest.m */,
+				6C9E63871D153F64007A8F93 /* ONEWatchOrderRecoverRequest.h */,
+				6C9E63881D153F64007A8F93 /* ONEWatchOrderRecoverRequest.m */,
+				6C9E63891D153F64007A8F93 /* ONEWatchPlanListRequest.h */,
+				6C9E638A1D153F64007A8F93 /* ONEWatchPlanListRequest.m */,
+				6C9E638B1D153F64007A8F93 /* ONEWatchReverseGEOReqeust.h */,
+				6C9E638C1D153F64007A8F93 /* ONEWatchReverseGEOReqeust.m */,
+				6C9E638D1D153F64007A8F93 /* ONEWatchTaxiOrderCancelRequest.h */,
+				6C9E638E1D153F64007A8F93 /* ONEWatchTaxiOrderCancelRequest.m */,
+				6C9E638F1D153F64007A8F93 /* ONEWatchTaxiOrderCreateRequest.h */,
+				6C9E63901D153F64007A8F93 /* ONEWatchTaxiOrderCreateRequest.m */,
+				6C9E63911D153F64007A8F93 /* ONEWatchTaxiOrderDetailRequest.h */,
+				6C9E63921D153F64007A8F93 /* ONEWatchTaxiOrderDetailRequest.m */,
+				6C9E63931D153F64007A8F93 /* ONEWatchTaxiOrderRecallRequest.h */,
+				6C9E63941D153F64007A8F93 /* ONEWatchTaxiOrderRecallRequest.m */,
+				6C9E63971D153F64007A8F93 /* ONEWatchTaxiOrderTerminalRequest.h */,
+				6C9E63981D153F64007A8F93 /* ONEWatchTaxiOrderTerminalRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		6C9E63991D153F64007A8F93 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				6C9E63E71D153FCD007A8F93 /* ONEWatchNotificationDefine.h */,
+				6C9E63E81D153FCD007A8F93 /* ONEWatchNotificationDefine.m */,
+				6C9E639A1D153F64007A8F93 /* NotificationController.h */,
+				6C9E639B1D153F64007A8F93 /* NotificationController.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		6C9E639C1D153F64007A8F93 /* CommunicateToiPhone */ = {
+			isa = PBXGroup;
+			children = (
+				0A0B18051D1BC63900B63FD2 /* ONEWatchCommunicateToiPhoneManager.h */,
+				0A0B18061D1BC63900B63FD2 /* ONEWatchCommunicateToiPhoneManager.m */,
+				6CE51C941D15B754006BE843 /* ONEWatchProductItem.h */,
+				6CE51C951D15B754006BE843 /* ONEWatchProductItem.m */,
+			);
+			name = CommunicateToiPhone;
+			path = RequestiPhoneData;
+			sourceTree = "<group>";
+		};
+		6C9E639F1D153F64007A8F93 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6CE51C911D15AF4B006BE843 /* NSString+WatchEncrypt.h */,
+				6CE51C921D15AF4B006BE843 /* NSString+WatchEncrypt.m */,
+				6C9E63A01D153F64007A8F93 /* NSObject+ONEWatch.h */,
+				6C9E63A11D153F64007A8F93 /* NSObject+ONEWatch.m */,
+				6C9E63B01D153F64007A8F93 /* ONEWatchWebImage.h */,
+				6C9E63B11D153F64007A8F93 /* ONEWatchWebImage.m */,
+				6CE51C8E1D157263006BE843 /* ONEWatchAlert.h */,
+				6CE51C8F1D157263006BE843 /* ONEWatchAlert.m */,
+				6CD705291D1FC6D000CE9742 /* NSObject+WatchCheckEmpty.h */,
+				6CD7052A1D1FC6D000CE9742 /* NSObject+WatchCheckEmpty.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6C9E63D41D153FC4007A8F93 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6C9E63D71D153FC4007A8F93 /* ONEWatchCommonDefines.h */,
+				6C9E63D81D153FC4007A8F93 /* ONEWatchCommonDefines.m */,
+				6C9E63D91D153FC4007A8F93 /* ONEWatchDataStore.h */,
+				6C9E63DA1D153FC4007A8F93 /* ONEWatchDataStore.m */,
+				6C9E63DB1D153FC4007A8F93 /* ONEWatchRouter.h */,
+				6C9E63DC1D153FC4007A8F93 /* ONEWatchRouter.m */,
+				6C9E63DD1D153FC4007A8F93 /* ONEWatchTimerManager.h */,
+				6C9E63DE1D153FC4007A8F93 /* ONEWatchTimerManager.m */,
+				6C1B2B001D156AF1004093E0 /* ONEWatchCommonStore.h */,
+				6C1B2B011D156AF1004093E0 /* ONEWatchCommonStore.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6CADC0D21D1256AB00EE1373 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6C9E63661D153F64007A8F93 /* Module */,
+				6CADC0D31D1256AB00EE1373 /* ExtensionDelegate.h */,
+				6CADC0D41D1256AB00EE1373 /* ExtensionDelegate.m */,
+				6CADC0D51D1256AB00EE1373 /* Glance */,
+				6CADC1271D1256AB00EE1373 /* WatchApp */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6CADC0D51D1256AB00EE1373 /* Glance */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC0D61D1256AB00EE1373 /* GlanceController.h */,
+				6CADC0D71D1256AB00EE1373 /* GlanceController.m */,
+				6CADC0D81D1256AB00EE1373 /* ONEWatchGlanceInfoModel.h */,
+				6CADC0D91D1256AB00EE1373 /* ONEWatchGlanceInfoModel.m */,
+				6CADC0DA1D1256AB00EE1373 /* ONEWatchGlanceViewModel.h */,
+				6CADC0DB1D1256AB00EE1373 /* ONEWatchGlanceViewModel.m */,
+			);
+			path = Glance;
+			sourceTree = "<group>";
+		};
+		6CADC1271D1256AB00EE1373 /* WatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC1371D1256AB00EE1373 /* InterfaceController.h */,
+				6CADC1381D1256AB00EE1373 /* InterfaceController.m */,
+				6CADC1391D1256AB00EE1373 /* ONEWatchBaseInterfaceController.h */,
+				6CADC13A1D1256AB00EE1373 /* ONEWatchBaseInterfaceController.m */,
+				6CADC1281D1256AB00EE1373 /* Arrived */,
+				6CADC12B1D1256AB00EE1373 /* CarType */,
+				6CADC1301D1256AB00EE1373 /* Home */,
+				6CADC13B1D1256AB00EE1373 /* Traveling */,
+				6CADC1401D1256AB00EE1373 /* WaitingPick */,
+				6CADC1451D1256AB00EE1373 /* WaitingResponse */,
+				6CADC14A1D1256AB00EE1373 /* WaitPay */,
+			);
+			path = WatchApp;
+			sourceTree = "<group>";
+		};
+		6CADC1281D1256AB00EE1373 /* Arrived */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC1291D1256AB00EE1373 /* ONEWatchArrivedInterfaceController.h */,
+				6CADC12A1D1256AB00EE1373 /* ONEWatchArrivedInterfaceController.m */,
+			);
+			path = Arrived;
+			sourceTree = "<group>";
+		};
+		6CADC12B1D1256AB00EE1373 /* CarType */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC12C1D1256AB00EE1373 /* ONEWatchCarTypeListInterfaceController.h */,
+				6CADC12D1D1256AB00EE1373 /* ONEWatchCarTypeListInterfaceController.m */,
+				6CADC12E1D1256AB00EE1373 /* ONEWatchCarTypeRowController.h */,
+				6CADC12F1D1256AB00EE1373 /* ONEWatchCarTypeRowController.m */,
+			);
+			path = CarType;
+			sourceTree = "<group>";
+		};
+		6CADC1301D1256AB00EE1373 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC1311D1256AB00EE1373 /* ONEWatchHomePageInfoModel.h */,
+				6CADC1321D1256AB00EE1373 /* ONEWatchHomePageInfoModel.m */,
+				6CADC1331D1256AB00EE1373 /* ONEWatchOneAddressForCallCarInterfaceController.h */,
+				6CADC1341D1256AB00EE1373 /* ONEWatchOneAddressForCallCarInterfaceController.m */,
+				6CADC1351D1256AB00EE1373 /* ONEWatchTwoAddressForCallCarInterfaceController.h */,
+				6CADC1361D1256AB00EE1373 /* ONEWatchTwoAddressForCallCarInterfaceController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6CADC13B1D1256AB00EE1373 /* Traveling */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC13C1D1256AB00EE1373 /* ONEWatchTravelingInfoModel.h */,
+				6CADC13D1D1256AB00EE1373 /* ONEWatchTravelingInfoModel.m */,
+				6CADC13E1D1256AB00EE1373 /* ONEWatchTravelingInterfaceController.h */,
+				6CADC13F1D1256AB00EE1373 /* ONEWatchTravelingInterfaceController.m */,
+			);
+			path = Traveling;
+			sourceTree = "<group>";
+		};
+		6CADC1401D1256AB00EE1373 /* WaitingPick */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC1411D1256AB00EE1373 /* ONEWatchWaitingPickInfoModel.h */,
+				6CADC1421D1256AB00EE1373 /* ONEWatchWaitingPickInfoModel.m */,
+				6CADC1431D1256AB00EE1373 /* ONEWatchWaitingPickInterfaceController.h */,
+				6CADC1441D1256AB00EE1373 /* ONEWatchWaitingPickInterfaceController.m */,
+			);
+			path = WaitingPick;
+			sourceTree = "<group>";
+		};
+		6CADC1451D1256AB00EE1373 /* WaitingResponse */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC1461D1256AB00EE1373 /* ONEWatchWaitingResponseInfoModel.h */,
+				6CADC1471D1256AB00EE1373 /* ONEWatchWaitingResponseInfoModel.m */,
+				6CADC1481D1256AB00EE1373 /* ONEWatchWaitingResponseInterfaceController.h */,
+				6CADC1491D1256AB00EE1373 /* ONEWatchWaitingResponseInterfaceController.m */,
+			);
+			path = WaitingResponse;
+			sourceTree = "<group>";
+		};
+		6CADC14A1D1256AB00EE1373 /* WaitPay */ = {
+			isa = PBXGroup;
+			children = (
+				6CADC14B1D1256AB00EE1373 /* ONEWatchWaitPayInfoModel.h */,
+				6CADC14C1D1256AB00EE1373 /* ONEWatchWaitPayInfoModel.m */,
+				6CADC14D1D1256AB00EE1373 /* ONEWatchWaitPayInterfaceController.h */,
+				6CADC14E1D1256AB00EE1373 /* ONEWatchWaitPayInterfaceController.m */,
+			);
+			path = WaitPay;
+			sourceTree = "<group>";
+		};
+		A69AB4221BD5184A00200C4E /* gpx */ = {
+			isa = PBXGroup;
+			children = (
+				0A8563441D2E3DAB00BF5F06 /* 安宁庄办公点.gpx */,
+				0A8563451D2E3DAB00BF5F06 /* 北京郊区.gpx */,
+				0A8563461D2E3DAB00BF5F06 /* 北京西.gpx */,
+				0A8563471D2E3DAB00BF5F06 /* 成都.gpx */,
+				0A8563481D2E3DAB00BF5F06 /* 重庆.gpx */,
+				0A8563491D2E3DAB00BF5F06 /* 大连.gpx */,
+				0A85634B1D2E3DAB00BF5F06 /* 广州.gpx */,
+				0A85634C1D2E3DAB00BF5F06 /* 杭州.gpx */,
+				0A85634D1D2E3DAB00BF5F06 /* 合肥.gpx */,
+				0A85634E1D2E3DAB00BF5F06 /* 回龙观.gpx */,
+				0A85634F1D2E3DAB00BF5F06 /* 济南.gpx */,
+				0A8563501D2E3DAB00BF5F06 /* 嘉兴.gpx */,
+				0A8563511D2E3DAB00BF5F06 /* 漯河.gpx */,
+				0A8563521D2E3DAB00BF5F06 /* 南京.gpx */,
+				0A8563531D2E3DAB00BF5F06 /* 上海.gpx */,
+				0A8563541D2E3DAB00BF5F06 /* 深圳.gpx */,
+				0A8563551D2E3DAB00BF5F06 /* 沈阳.gpx */,
+				0A8563561D2E3DAB00BF5F06 /* 苏州.gpx */,
+				0A8563571D2E3DAB00BF5F06 /* 乌鲁木齐.gpx */,
+				0A8563581D2E3DAB00BF5F06 /* 五道口2100.gpx */,
+				0A8563591D2E3DAB00BF5F06 /* 武汉.gpx */,
+				0A85635A1D2E3DAB00BF5F06 /* 西安.gpx */,
+				0A85635B1D2E3DAB00BF5F06 /* 中关村.gpx */,
+				0A85635C1D2E3DAB00BF5F06 /* longze.gpx */,
+				0A14BB451C85DEC900868FFF /* 得实大厦.gpx */,
+			);
+			name = gpx;
+			sourceTree = "<group>";
+		};
+		E43F2EA91B70B30300389CF0 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E43F2EAA1B70B35800389CF0 /* AppDelegate.h */,
+				E43F2EAB1B70B35800389CF0 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E71489D47AEFBF3AC094F315 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3805FE64EF7A4C9B4BE63A15 /* Pods-OneTravel.debug.xcconfig */,
+				A7E7EEE13440E45410F86331 /* Pods-OneTravel.release.xcconfig */,
+				A8415E3245D028C8465192A8 /* Pods-OneTravel.releasebeta.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA6E07101B40E2980035DA22 = {
+			isa = PBXGroup;
+			children = (
+				EA6E071B1B40E2980035DA22 /* OneTravel */,
+				0A0905681D0FE57600E4F5FD /* ONEWatch */,
+				0A0905771D0FE57600E4F5FD /* ONEWatch Extension */,
+				EA6E071A1B40E2980035DA22 /* Products */,
+				6AB58A3654FB76D3C3421262 /* Frameworks */,
+				E71489D47AEFBF3AC094F315 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		EA6E071A1B40E2980035DA22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E07191B40E2980035DA22 /* OneTravel.app */,
+				0A0905671D0FE57600E4F5FD /* ONEWatch.app */,
+				0A0905731D0FE57600E4F5FD /* ONEWatch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA6E071B1B40E2980035DA22 /* OneTravel */ = {
+			isa = PBXGroup;
+			children = (
+				0A85637D1D2E467000BF5F06 /* ConfigData */,
+				E43F2EA91B70B30300389CF0 /* AppDelegate */,
+				EA6E07291B40E2980035DA22 /* Images.xcassets */,
+				EA6E072B1B40E2980035DA22 /* LaunchScreen.xib */,
+				EA6E071C1B40E2980035DA22 /* Supporting Files */,
+			);
+			path = OneTravel;
+			sourceTree = "<group>";
+		};
+		EA6E071C1B40E2980035DA22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A69AB4221BD5184A00200C4E /* gpx */,
+				E4E70BB31B8EA8C3006D06B9 /* cert.cer */,
+				EA6E071D1B40E2980035DA22 /* Info.plist */,
+				EA6E071E1B40E2980035DA22 /* main.m */,
+				EADCA2071B40F7990074C961 /* OneTravel-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A0905661D0FE57600E4F5FD /* ONEWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A0905911D0FE57600E4F5FD /* Build configuration list for PBXNativeTarget "ONEWatch" */;
+			buildPhases = (
+				0A0905651D0FE57600E4F5FD /* Resources */,
+				0A0905901D0FE57600E4F5FD /* Embed App Extensions */,
+				F76398914070E137B0E1B807 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A0905761D0FE57600E4F5FD /* PBXTargetDependency */,
+			);
+			name = ONEWatch;
+			productName = ONEWatch;
+			productReference = 0A0905671D0FE57600E4F5FD /* ONEWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		0A0905721D0FE57600E4F5FD /* ONEWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A09058C1D0FE57600E4F5FD /* Build configuration list for PBXNativeTarget "ONEWatch Extension" */;
+			buildPhases = (
+				0A09056F1D0FE57600E4F5FD /* Sources */,
+				0A0905701D0FE57600E4F5FD /* Frameworks */,
+				0A0905711D0FE57600E4F5FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ONEWatch Extension";
+			productName = "ONEWatch Extension";
+			productReference = 0A0905731D0FE57600E4F5FD /* ONEWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		EA6E07181B40E2980035DA22 /* OneTravel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA6E073C1B40E2980035DA22 /* Build configuration list for PBXNativeTarget "OneTravel" */;
+			buildPhases = (
+				356A955C3994852E334A6565 /* [CP] Check Pods Manifest.lock */,
+				EA6E07151B40E2980035DA22 /* Sources */,
+				EA6E07161B40E2980035DA22 /* Frameworks */,
+				EA6E07171B40E2980035DA22 /* Resources */,
+				63324DC81BE8C20D00FF7C21 /* ShellScript */,
+				FF0AA53309B11E51C783712B /* [CP] Embed Pods Frameworks */,
+				021FB4EE7C7F040D38A2B9B7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneTravel;
+			productName = OneTravel;
+			productReference = EA6E07191B40E2980035DA22 /* OneTravel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA6E07111B40E2980035DA22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ONE;
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Didi.Inc;
+				TargetAttributes = {
+					0A0905661D0FE57600E4F5FD = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 295GW6K43C;
+					};
+					0A0905721D0FE57600E4F5FD = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 295GW6K43C;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
+					};
+					EA6E07181B40E2980035DA22 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = QVRKK2EEDF;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = EA6E07141B40E2980035DA22 /* Build configuration list for PBXProject "OneTravel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = EA6E07101B40E2980035DA22;
+			productRefGroup = EA6E071A1B40E2980035DA22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA6E07181B40E2980035DA22 /* OneTravel */,
+				0A0905661D0FE57600E4F5FD /* ONEWatch */,
+				0A0905721D0FE57600E4F5FD /* ONEWatch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A0905651D0FE57600E4F5FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A09059A1D0FEC0200E4F5FD /* Interface.storyboard in Resources */,
+				0A09056D1D0FE57600E4F5FD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A0905711D0FE57600E4F5FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A0905871D0FE57600E4F5FD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA6E07171B40E2980035DA22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A8563741D2E3DAB00BF5F06 /* 中关村.gpx in Resources */,
+				0A8563691D2E3DAB00BF5F06 /* 嘉兴.gpx in Resources */,
+				0A8563851D2E467000BF5F06 /* Plugins.json in Resources */,
+				0A8563661D2E3DAB00BF5F06 /* 合肥.gpx in Resources */,
+				0A8563601D2E3DAB00BF5F06 /* 成都.gpx in Resources */,
+				0A8563821D2E467000BF5F06 /* ONEAppRemoteConfig.json in Resources */,
+				0A85635F1D2E3DAB00BF5F06 /* 北京西.gpx in Resources */,
+				0A8563671D2E3DAB00BF5F06 /* 回龙观.gpx in Resources */,
+				0A8563651D2E3DAB00BF5F06 /* 杭州.gpx in Resources */,
+				0A8563681D2E3DAB00BF5F06 /* 济南.gpx in Resources */,
+				0A85635D1D2E3DAB00BF5F06 /* 安宁庄办公点.gpx in Resources */,
+				0A85636F1D2E3DAB00BF5F06 /* 苏州.gpx in Resources */,
+				0A8563701D2E3DAB00BF5F06 /* 乌鲁木齐.gpx in Resources */,
+				0A85636C1D2E3DAB00BF5F06 /* 上海.gpx in Resources */,
+				0A85636B1D2E3DAB00BF5F06 /* 南京.gpx in Resources */,
+				0A8563831D2E467000BF5F06 /* ONEHomeConfigFile.json in Resources */,
+				0A85635E1D2E3DAB00BF5F06 /* 北京郊区.gpx in Resources */,
+				0A8563731D2E3DAB00BF5F06 /* 西安.gpx in Resources */,
+				0A8563711D2E3DAB00BF5F06 /* 五道口2100.gpx in Resources */,
+				0A8563621D2E3DAB00BF5F06 /* 大连.gpx in Resources */,
+				0A8563721D2E3DAB00BF5F06 /* 武汉.gpx in Resources */,
+				0A8563841D2E467000BF5F06 /* ONEProductConfig.json in Resources */,
+				0A85636E1D2E3DAB00BF5F06 /* 沈阳.gpx in Resources */,
+				0A85636A1D2E3DAB00BF5F06 /* 漯河.gpx in Resources */,
+				EA6E072A1B40E2980035DA22 /* Images.xcassets in Resources */,
+				0A8563641D2E3DAB00BF5F06 /* 广州.gpx in Resources */,
+				0A85636D1D2E3DAB00BF5F06 /* 深圳.gpx in Resources */,
+				0A14BB5E1C85DECA00868FFF /* 得实大厦.gpx in Resources */,
+				0A8563611D2E3DAB00BF5F06 /* 重庆.gpx in Resources */,
+				E4E70BB41B8EA8C3006D06B9 /* cert.cer in Resources */,
+				0A8563751D2E3DAB00BF5F06 /* longze.gpx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		021FB4EE7C7F040D38A2B9B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneTravel/Pods-OneTravel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		356A955C3994852E334A6565 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		63324DC81BE8C20D00FF7C21 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#${PODS_ROOT}/Fabric/run 8aff7b9984a349028fd67c6ff42c8c305d3aa85c c84e0df63f1c2d0513db46aa94c16acc3ac940e0d55e7185daf7e666b074f73f\n\n\n################################################################################\n# 注意: 请配置下面的信息\n################################################################################\nBUGLY_APP_ID=\"900016328\"\nBUGLY_APP_KEY=\"bvAxq1nEHxGBkORp\"\nBUNDLE_IDENTIFIER=\"com.xiaojukeji.didi\"\n################################################################################\n# 自定义配置\n################################################################################\n# Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\nUPLOAD_DEBUG_SYMBOLS=0\n#\n# 模拟器编译是否上传，1=上传 0=不上传，默认不上传\nUPLOAD_SIMULATOR_SYMBOLS=0\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n\n#source ${SRCROOT}/dsymtool/dSYMUpload.sh\n\n# OmegaSDK的崩溃上传dysm的脚本，DEBUG模式下，默认不上传\n#source ${SRCROOT}/dsymtool/Omega-dSYMUpload.sh";
+		};
+		FF0AA53309B11E51C783712B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneTravel/Pods-OneTravel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A09056F1D0FE57600E4F5FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C9E63E21D153FC4007A8F93 /* ONEWatchCommonDefines.m in Sources */,
+				6C9E63BF1D153F64007A8F93 /* ONEWatchGetDriversLocRequest.m in Sources */,
+				6C9E63E91D153FCD007A8F93 /* ONEWatchNotificationDefine.m in Sources */,
+				0ABF0FD91D51C90600F8348C /* ONEWatchOrderModel.m in Sources */,
+				6C9E63E51D153FC4007A8F93 /* ONEWatchTimerManager.m in Sources */,
+				6C9E63BB1D153F64007A8F93 /* ONEWatchNetworkStore.m in Sources */,
+				6C9E63C61D153F64007A8F93 /* ONEWatchTaxiOrderRecallRequest.m in Sources */,
+				6CADC17F1D1256AB00EE1373 /* ONEWatchWaitingPickInfoModel.m in Sources */,
+				6C9E63BE1D153F64007A8F93 /* ONEWatchGetDriverLocByIdRequest.m in Sources */,
+				6CE51C931D15AF4B006BE843 /* NSString+WatchEncrypt.m in Sources */,
+				6C9E63BA1D153F64007A8F93 /* ONEWatchPlanListModel.m in Sources */,
+				6CADC1511D1256AB00EE1373 /* ONEWatchGlanceInfoModel.m in Sources */,
+				6C9E63BD1D153F64007A8F93 /* ONEWatchCommonPOIRequest.m in Sources */,
+				6CADC1761D1256AB00EE1373 /* ONEWatchCarTypeListInterfaceController.m in Sources */,
+				6CADC17E1D1256AB00EE1373 /* ONEWatchTravelingInterfaceController.m in Sources */,
+				6C9E63B61D153F64007A8F93 /* ONEWatchCommonPOIModel.m in Sources */,
+				6C9E63C31D153F64007A8F93 /* ONEWatchTaxiOrderCancelRequest.m in Sources */,
+				6C9E63E41D153FC4007A8F93 /* ONEWatchRouter.m in Sources */,
+				6CADC14F1D1256AB00EE1373 /* ExtensionDelegate.m in Sources */,
+				6CD7052B1D1FC6D000CE9742 /* NSObject+WatchCheckEmpty.m in Sources */,
+				6CADC1811D1256AB00EE1373 /* ONEWatchWaitingResponseInfoModel.m in Sources */,
+				6C9E63B21D153F64007A8F93 /* JZLocationConverter.m in Sources */,
+				6CADC17B1D1256AB00EE1373 /* InterfaceController.m in Sources */,
+				6C9E63C01D153F64007A8F93 /* ONEWatchOrderRecoverRequest.m in Sources */,
+				6CE51C901D157263006BE843 /* ONEWatchAlert.m in Sources */,
+				6CADC1801D1256AB00EE1373 /* ONEWatchWaitingPickInterfaceController.m in Sources */,
+				6CADC17C1D1256AB00EE1373 /* ONEWatchBaseInterfaceController.m in Sources */,
+				6CADC1821D1256AB00EE1373 /* ONEWatchWaitingResponseInterfaceController.m in Sources */,
+				6C9E63D31D153F64007A8F93 /* ONEWatchWebImage.m in Sources */,
+				0A0B18071D1BC63900B63FD2 /* ONEWatchCommunicateToiPhoneManager.m in Sources */,
+				6CE51C961D15B754006BE843 /* ONEWatchProductItem.m in Sources */,
+				6C9E63B51D153F64007A8F93 /* ONEWatchCarTypeModel.m in Sources */,
+				6CADC17D1D1256AB00EE1373 /* ONEWatchTravelingInfoModel.m in Sources */,
+				6C9E63C11D153F64007A8F93 /* ONEWatchPlanListRequest.m in Sources */,
+				6C9E63B31D153F64007A8F93 /* ONEWatchLocationManager.m in Sources */,
+				6CADC1751D1256AB00EE1373 /* ONEWatchArrivedInterfaceController.m in Sources */,
+				6C9E63ED1D156391007A8F93 /* ONEWatchBaseModel.m in Sources */,
+				6CADC1771D1256AB00EE1373 /* ONEWatchCarTypeRowController.m in Sources */,
+				6C9E63B41D153F64007A8F93 /* ONEWatchPoiModel.m in Sources */,
+				6C1B2B021D156AF1004093E0 /* ONEWatchCommonStore.m in Sources */,
+				6CADC1781D1256AB00EE1373 /* ONEWatchHomePageInfoModel.m in Sources */,
+				6CADC17A1D1256AB00EE1373 /* ONEWatchTwoAddressForCallCarInterfaceController.m in Sources */,
+				6CADC1831D1256AB00EE1373 /* ONEWatchWaitPayInfoModel.m in Sources */,
+				6C9E63CB1D153F64007A8F93 /* NSObject+ONEWatch.m in Sources */,
+				6C9E63C51D153F64007A8F93 /* ONEWatchTaxiOrderDetailRequest.m in Sources */,
+				6C9E63C91D153F64007A8F93 /* NotificationController.m in Sources */,
+				6CADC1841D1256AB00EE1373 /* ONEWatchWaitPayInterfaceController.m in Sources */,
+				6C9E63C21D153F64007A8F93 /* ONEWatchReverseGEOReqeust.m in Sources */,
+				6C9E63B71D153F64007A8F93 /* ONEWatchDriversPOIModel.m in Sources */,
+				6CADC1521D1256AB00EE1373 /* ONEWatchGlanceViewModel.m in Sources */,
+				6C9E63C41D153F64007A8F93 /* ONEWatchTaxiOrderCreateRequest.m in Sources */,
+				6CADC1501D1256AB00EE1373 /* GlanceController.m in Sources */,
+				6C9E63E31D153FC4007A8F93 /* ONEWatchDataStore.m in Sources */,
+				6C9E63BC1D153F64007A8F93 /* ONEWatchBaseRequest.m in Sources */,
+				6C9E63C81D153F64007A8F93 /* ONEWatchTaxiOrderTerminalRequest.m in Sources */,
+				6CADC1791D1256AB00EE1373 /* ONEWatchOneAddressForCallCarInterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA6E07151B40E2980035DA22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E43F2EAC1B70B35800389CF0 /* AppDelegate.m in Sources */,
+				EA6E071F1B40E2980035DA22 /* main.m in Sources */,
+				6C9E63EC1D156391007A8F93 /* ONEWatchBaseModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A0905761D0FE57600E4F5FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A0905721D0FE57600E4F5FD /* ONEWatch Extension */;
+			targetProxy = 0A0905751D0FE57600E4F5FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0A0905981D0FEC0200E4F5FD /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A0905991D0FEC0200E4F5FD /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		EA6E072B1B40E2980035DA22 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA6E072C1B40E2980035DA22 /* Base */,
+				99322E271B4A2BE100E364BF /* zh-Hans */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0A09058D1D0FE57600E4F5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = "ONEWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.didi.iwatchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		0A09058E1D0FE57600E4F5FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = "ONEWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.didi.iwatchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		0A0905921D0FE57600E4F5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				IBSC_MODULE = ONEWatch_Extension;
+				INFOPLIST_FILE = ONEWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.didi.iwatchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		0A0905931D0FE57600E4F5FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				IBSC_MODULE = ONEWatch_Extension;
+				INFOPLIST_FILE = ONEWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.didi.iwatchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		7234C3291D2A80350075A987 /* ReleaseBeta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = ReleaseBeta;
+		};
+		7234C32A1D2A80350075A987 /* ReleaseBeta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8415E3245D028C8465192A8 /* Pods-OneTravel.releasebeta.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DEVELOPMENT_TEAM = QVRKK2EEDF;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OneTravel/OneTravel-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = OneTravel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_GENERATE_MAP_FILE = YES;
+				LD_MAP_FILE_PATH = "$(PROJECT_DIR)/build/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.didi.cl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				STRIP_INSTALLED_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = ReleaseBeta;
+		};
+		7234C32B1D2A80350075A987 /* ReleaseBeta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				IBSC_MODULE = ONEWatch_Extension;
+				INFOPLIST_FILE = ONEWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.didi.iwatchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = ReleaseBeta;
+		};
+		7234C32C1D2A80350075A987 /* ReleaseBeta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = "ONEWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.didi.iwatchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = ReleaseBeta;
+		};
+		EA6E073A1B40E2980035DA22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EA6E073B1B40E2980035DA22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA6E073D1B40E2980035DA22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3805FE64EF7A4C9B4BE63A15 /* Pods-OneTravel.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QVRKK2EEDF;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OneTravel/OneTravel-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = OneTravel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_GENERATE_MAP_FILE = YES;
+				LD_MAP_FILE_PATH = "$(PROJECT_DIR)/build/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.didi.cl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				STRIP_INSTALLED_PRODUCT = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EA6E073E1B40E2980035DA22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7E7EEE13440E45410F86331 /* Pods-OneTravel.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DEVELOPMENT_TEAM = QVRKK2EEDF;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OneTravel/OneTravel-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG=1",
+					"$(inherited)",
+					"NS_BLOCK_ASSERTIONS=1",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = OneTravel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_GENERATE_MAP_FILE = YES;
+				LD_MAP_FILE_PATH = "$(PROJECT_DIR)/build/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.didi.cl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				STRIP_INSTALLED_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A09058C1D0FE57600E4F5FD /* Build configuration list for PBXNativeTarget "ONEWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A09058D1D0FE57600E4F5FD /* Debug */,
+				0A09058E1D0FE57600E4F5FD /* Release */,
+				7234C32C1D2A80350075A987 /* ReleaseBeta */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A0905911D0FE57600E4F5FD /* Build configuration list for PBXNativeTarget "ONEWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A0905921D0FE57600E4F5FD /* Debug */,
+				0A0905931D0FE57600E4F5FD /* Release */,
+				7234C32B1D2A80350075A987 /* ReleaseBeta */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA6E07141B40E2980035DA22 /* Build configuration list for PBXProject "OneTravel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6E073A1B40E2980035DA22 /* Debug */,
+				EA6E073B1B40E2980035DA22 /* Release */,
+				7234C3291D2A80350075A987 /* ReleaseBeta */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA6E073C1B40E2980035DA22 /* Build configuration list for PBXNativeTarget "OneTravel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6E073D1B40E2980035DA22 /* Debug */,
+				EA6E073E1B40E2980035DA22 /* Release */,
+				7234C32A1D2A80350075A987 /* ReleaseBeta */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA6E07111B40E2980035DA22 /* Project object */;
+}
