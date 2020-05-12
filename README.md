@@ -442,6 +442,12 @@ drwx------  2 wesley_chen  staff  64 May  5 22:15 /var/folders/nb/0wzdfzd51p3_cd
 
 
 
+### （12）whereis
+
+whereis查询命令行工具的位置
+
+
+
 
 
 References
