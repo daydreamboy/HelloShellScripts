@@ -453,7 +453,7 @@ whereis查询命令行工具的位置
 zip用于压缩文件或文件夹。举个例子，如下
 
 ```shell
-$ zip -er path/to/folder
+$ zip -er archivename.zip path/to/folder
 ```
 
 
@@ -469,6 +469,14 @@ $ zip -er path/to/folder
 #### `-e`
 
 压缩使用密码
+
+
+
+### （14）sed
+
+sed (stream editor)命令行工具，是一个比较常用的文本编辑器。
+
+
 
 
 
