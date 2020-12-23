@@ -466,7 +466,7 @@ $ zip -er archivename.zip path/to/folder
 
 
 
-#### `-e`
+##### `-e`
 
 压缩使用密码
 
@@ -474,7 +474,185 @@ $ zip -er archivename.zip path/to/folder
 
 ### （14）sed
 
-sed (stream editor)命令行工具，是一个比较常用的文本编辑器。
+#### a. 介绍
+
+sed (stream editor)命令行工具，是一个比较常用的文本编辑器。目前有两个版本的sed，一个是BSD版本，一个是[GNU版本](https://www.gnu.org/software/sed/manual/html_node/index.html#SEC_Contents)。不同版本的sed语法结构和支持能力是不一样，但是有些基本语法，这两个版本是通用的。
+
+> 本文介绍sed是BSD版本，在MacOS上可操作执行。
+
+
+
+sed的语法比较多，但通用的调用格式，如下
+
+```shell
+sed [-Ealnru] command [file ...]
+sed [-Ealnr] [-e command] [-f command_file] [-I extension] [-i extension] [file ...]
+```
+
+一般使用不带option，而且是上面第一个格式，即
+
+```shell
+sed command [file ...]
+```
+
+这里command相当于sed的子命令，有它自身语法格式，如下
+
+```shell
+[addr]X[options]
+```
+
+简单来说，command由addr、X和options组成，它们的含义如下
+
+* addr（可选），代表行号、正则表达式或者行号的范围
+* X，特定的子命令（后面称sed command），具体可以参考这篇文档[^9]
+
+* options（可选），用于修饰某些sed command
+
+
+
+sed文档描述[^8]，如下
+
+> X is a single-letter `sed` command. `[addr]` is an optional line address. If `[addr]` is specified, the command X will be executed only on the matched lines. `[addr]` can be a single line number, a regular expression, or a range of lines (see [sed addresses](https://www.gnu.org/software/sed/manual/html_node/sed-addresses.html#sed-addresses)). Additional `[options]` are used for some `sed` commands.
+
+
+
+基于上面结构，sed命令主要功能，有下面几个部分
+
+* 选择行 ([Addresses: selecting lines](https://www.gnu.org/software/sed/manual/html_node/sed-addresses.html#sed-addresses))，基于行号或者正则表达式
+* 选择文本 ([Regular Expressions: selecting text](https://www.gnu.org/software/sed/manual/html_node/sed-regular-expressions.html#sed-regular-expressions))，基于正则表达式
+
+在后面的“选择行”和“选择文本”两节中，会详细介绍。
+
+
+
+#### b. sed命令选项
+
+sed命令选项，主要是指下面使用`-`的参数，例如`-n`、`-f`等
+
+```shell
+sed [-Ealnru] command [file ...]
+sed [-Ealnr] [-e command] [-f command_file] [-I extension] [-i extension] [file ...]
+```
+
+
+
+##### `-n`选项
+
+sed命令处理输入，是按照行来处理的。默认sed每处理一行，都会把当前处理的行回显到stdout中。如果指定`-n`，则不显示回显。
+
+举个例子，如下
+
+```shell
+$ cat bar.txt 
+Hello,
+world!%
+```
+
+> %表示末尾没有换行符
+
+
+
+使用`-n`输出，如下
+
+```shell
+$ sed -n 1,2p bar.txt
+Hello,
+world!%                        
+```
+
+不使用`-n`输出，如下
+
+```shell
+$ sed 1,2p bar.txt 
+Hello,
+Hello,
+world!world!%
+```
+
+> 1. 1,2p是选择行的语法，表示选择第一行到第二行[^12]
+> 2. 由于sed是按照行处理的，每当一行处理完，会满足条件（行号、正则表达式等）的行输出到stdout。如果没有`-n`，则把当前处理的行，也会输出处理。
+
+
+
+对于不同sed command，不带`-n`的输出也是不一样的。举个例子，如下
+
+```shell
+$ cat bar.txt 
+Hello,
+world!%
+$ sed 's/He/bl/' bar.txt  
+blllo,
+world!%
+$ sed -n 's/He/bl/' bar.txt
+```
+
+对于sed command的s command（具体参考“s command”一节），`-n`就是不输出处理的结果。
+
+
+
+#### c. sed command
+
+##### s command[^10]
+
+s command是sed command的一种，比较常用，所以单独介绍一下。它的语法结构，如下
+
+```shell
+s/regexp/replacement/[flags]
+```
+
+s应该是substitute的缩写，该命令用于正则表达式匹配并替换。
+
+参考这篇文档的描述[^11]，如下
+
+> (substitute) Match the regular-expression against the content of the pattern space. If found, replace matched string with replacement.
+
+
+
+
+
+#### d. 选择行
+
+
+
+
+
+#### e. 选择文本
+
+
+
+
+
+
+
+### （15）seq
+
+#### a. 介绍
+
+seq用于按照一定顺序打印数字
+
+
+
+#### b. 语法格式
+
+```shell
+seq [-w] [-f format] [-s string] [-t string] [first [incr]] last
+```
+
+
+
+#### c. 使用示例
+
+```shell
+$ seq 3
+1
+2
+3
+$ seq 2 3
+2
+3
+```
+
+
 
 
 
@@ -493,6 +671,12 @@ References
 [^5]:https://unix.stackexchange.com/a/37316
 [^6]: http://julio.meroh.net/2010/01/set-e-and-set-x.html
 [^7]:https://stackoverflow.com/a/3327022
+
+[^8]:https://www.gnu.org/software/sed/manual/html_node/sed-script-overview.html#sed-script-overview
+[^9]:https://www.gnu.org/software/sed/manual/html_node/sed-commands-list.html#sed-commands-list
+[^10]:https://www.gnu.org/software/sed/manual/html_node/The-_0022s_0022-Command.html#The-_0022s_0022-Command
+[^11]:https://www.gnu.org/software/sed/manual/html_node/sed-commands-list.html#sed-commands-list
+[^12]:https://alexharv074.github.io/2019/04/16/a-sed-tutorial-and-reference.html#select-lines-by-range
 
 
 
