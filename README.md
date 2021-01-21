@@ -654,6 +654,14 @@ $ seq 2 3
 
 
 
+## 4、zsh
+
+### （1）命令行提示增加时间[^13]
+
+```shell
+PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%T}] '$PROMPT
+```
+
 
 
 
@@ -677,6 +685,8 @@ References
 [^10]:https://www.gnu.org/software/sed/manual/html_node/The-_0022s_0022-Command.html#The-_0022s_0022-Command
 [^11]:https://www.gnu.org/software/sed/manual/html_node/sed-commands-list.html#sed-commands-list
 [^12]:https://alexharv074.github.io/2019/04/16/a-sed-tutorial-and-reference.html#select-lines-by-range
+
+[^13]:https://stackoverflow.com/a/48341347
 
 
 
