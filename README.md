@@ -14,13 +14,50 @@ MacOS支持多种Shell，默认是bash，但是个人觉得zsh比较好用。
 
 
 
+### (1) 文件模块化
 
+Shell支持函数，可以将一些工具函数，放在单独的文件中，形成独立的模块。其他业务，可以引用该模块文件。
+
+可以使用source命令(即`.`命令)来导入其他文件的函数[^14]，举个例子，如下
+
+library.sh
+
+```shell
+#!/usr/bin/env bash
+
+foo() {
+    echo foo $1
+}
+
+test_foo() {
+    foo 1
+    foo 2
+}
+
+if [[ "${1}" == "--source-only" ]]; then
+    test_foo "${@}"
+fi
+```
+
+当library.sh接收选项`--source-only`时，则执行test_foo函数，否则不执行test_foo函数。这种方式可以用于在模块文件中，添加单测函数。
+
+
+
+use_library.sh
+
+```shell
+#!/usr/bin/env bash
+
+. ./library.sh --source-only
+
+foo 3
+```
 
 
 
 ## 2、环境变量
 
-### （1）$SHELL
+### (1) $SHELL
 
 默认shell的路径，例如
 
@@ -35,6 +72,22 @@ $ echo $SHELL
 > 2. 如果需要找当前生效的shell，可以使用`echo $0`来打印shell的名字[^7]。
 
 
+
+### (2) $FUNCNAME
+
+FUNCNAME变量是一个数组变量，包含函数调用栈的信息，当前函数是`${FUNCNAME[0]}`，它的一级调用者是`${FUNCNAME[1]}`，它的二级调用者是`${FUNCNAME[2]}`，依次类推。
+
+
+
+关于GNU文档描述[^15]，如下
+
+> ```
+> FUNCNAME
+> ```
+>
+> An array variable containing the names of all shell functions currently in the execution call stack. The element with index 0 is the name of any currently-executing shell function. The bottom-most element (the one with the highest index) is `"main"`. This variable exists only when a shell function is executing. Assignments to `FUNCNAME` have no effect. If `FUNCNAME` is unset, it loses its special properties, even if it is subsequently reset.
+>
+> This variable can be used with `BASH_LINENO` and `BASH_SOURCE`. Each element of `FUNCNAME` has corresponding elements in `BASH_LINENO` and `BASH_SOURCE` to describe the call stack. For instance, `${FUNCNAME[$i]}` was called from the file `${BASH_SOURCE[$i+1]}` at line number `${BASH_LINENO[$i]}`. The `caller` builtin displays the current call stack using this information.
 
 
 
@@ -687,6 +740,9 @@ References
 [^12]:https://alexharv074.github.io/2019/04/16/a-sed-tutorial-and-reference.html#select-lines-by-range
 
 [^13]:https://stackoverflow.com/a/48341347
+
+[^14]:https://stackoverflow.com/questions/12815774/importing-functions-from-a-shell-script
+[^15]:https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html
 
 
 
