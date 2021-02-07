@@ -77,9 +77,28 @@ $ echo $SHELL
 
 FUNCNAME变量是一个数组变量，包含函数调用栈的信息，当前函数是`${FUNCNAME[0]}`，它的一级调用者是`${FUNCNAME[1]}`，它的二级调用者是`${FUNCNAME[2]}`，依次类推。
 
+举个例子，如下
+
+```shell
+#!/usr/bin/env bash
+
+foo() {
+    echo ${FUNCNAME[0]}  # prints 'foo'
+    echo ${FUNCNAME[1]}  # prints 'bar'
+    echo ${FUNCNAME[2]}  # prints 'main'
+    echo ${FUNCNAME[3]}  # no output
+    echo ${FUNCNAME[4]}  # no output
+}
+
+bar() { foo; }
+bar
+```
+
+> 示例代码，见function_get_function_name.sh
 
 
-关于GNU文档描述[^15]，如下
+
+关于FUNCNAME变量，GNU文档描述[^15]，如下
 
 > ```
 > FUNCNAME
