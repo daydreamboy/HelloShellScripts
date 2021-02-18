@@ -16,11 +16,9 @@ MacOS支持多种Shell，默认是bash，但是个人觉得zsh比较好用。
 
 ### (1) 文件模块化
 
-Shell支持函数，可以将一些工具函数，放在单独的文件中，形成独立的模块。其他业务，可以引用该模块文件。
+​        可以使用`source`命令(即`.`命令)来导入其他文件的函数[^14]。一般将一些工具函数，放在单独的文件中，形成独立的模块文件。
 
-可以使用source命令(即`.`命令)来导入其他文件的函数[^14]，举个例子，如下
-
-library.sh
+举个例子，library.sh是一个模块文件，如下
 
 ```shell
 #!/usr/bin/env bash
@@ -43,7 +41,7 @@ fi
 
 
 
-use_library.sh
+use_library.sh是使用library.sh的业务方代码，如下
 
 ```shell
 #!/usr/bin/env bash
