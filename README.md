@@ -705,7 +705,7 @@ seq用于按照一定顺序打印数字
 #### b. 语法格式
 
 ```shell
-seq [-w] [-f format] [-s string] [-t string] [first [incr]] last
+$ seq [-w] [-f format] [-s string] [-t string] [first [incr]] last
 ```
 
 
@@ -724,6 +724,92 @@ $ seq 2 3
 
 
 
+### (16) man
+
+#### a. 介绍
+
+man（manual）命令，是用于查看命令、系统调用、C库函数等的使用手册。
+
+man将各种使用手册，分为下面8大类，如下
+
+```shell
+The standard sections of the manual include:
+1      User Commands
+2      System Calls
+3      C Library Functions
+4      Devices and Special Files
+5      File Formats and Conventions
+6      Games et. Al.
+7      Miscellanea
+8      System Administration tools and Deamons
+```
+
+
+
+#### b. 语法格式
+
+```shell
+$ man [OPTION]... [COMMAND NAME]...
+```
+
+
+
+#### c. 使用示例
+
+##### 1. 查看某个命令的手册
+
+```shell
+$ man man
+```
+
+说明
+
+> 如果要全部输出，可以使用`man <command> | cat`。
+
+
+
+##### 2. 查看指定某个分类下的命令[^17]
+
+```shell
+$ man 2 open
+```
+
+如果某个命令代表的含义比较多，比如open即可以是open命令，也可以是C函数open，因此可以指定分类的编号。
+
+
+
+##### 3. 查看命令的所有分类编号[^17]
+
+```shell
+$ man -f mmap
+```
+
+使用`-f`选项，可以查看命令在哪个分类
+
+
+
+##### 4. 打开该命令所有的手册内容[^17]
+
+```shell
+$ man -a mmap
+```
+
+可以使用`-a`选项，打开命令对应的所有手册。不过有些的命令，对应很多个手册，输出的内容将会很多。这个命令实际用处也不大。
+
+
+
+##### 5. 打开命令的所在文件[^17]
+
+```shell
+$ man -w mmap
+```
+
+可以使用`-w`选项，显示命令对应手册所在的文件路径。可以看出命令对应的手册信息，其实是以文件的形式存放的。
+
+
+
+
+
 ## 4、zsh
 
 ### （1）命令行提示增加时间[^13]
@@ -731,6 +817,29 @@ $ seq 2 3
 ```shell
 PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%T}] '$PROMPT
 ```
+
+
+
+## 附录
+
+### 1、MacOS常用使用技巧
+
+#### （1）以root用户登录shell[^16]
+
+```shell
+$ sudo -i
+Password: <your login password>
+# whoami
+root
+```
+
+
+
+TODO: https://superuser.com/questions/159486/how-to-kill-process-in-mac-os-x-and-not-have-it-restart-on-its-own
+
+
+
+
 
 
 
@@ -760,6 +869,10 @@ References
 
 [^14]:https://stackoverflow.com/questions/12815774/importing-functions-from-a-shell-script
 [^15]:https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html
+
+[^16]:https://superuser.com/questions/592323/how-do-i-become-root-on-mac-os-x/592324
+
+[^17]:https://www.geeksforgeeks.org/man-command-in-linux-with-examples/
 
 
 
