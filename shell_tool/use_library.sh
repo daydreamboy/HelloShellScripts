@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-. ./library.sh --source-only
+# equivalent to source './library.sh'
+. ./library.sh
 
 foo 3

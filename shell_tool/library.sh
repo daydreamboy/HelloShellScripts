@@ -9,6 +9,6 @@ test_foo() {
     foo 2
 }
 
-if [[ "${1}" != "--source-only" ]]; then
+if [[ "${1}" == "--test" ]]; then
     test_foo "${@}"
 fi

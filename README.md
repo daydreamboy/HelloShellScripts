@@ -16,7 +16,23 @@ MacOS支持多种Shell，默认是bash，但是个人觉得zsh比较好用。
 
 ### (1) 文件模块化
 
-​        可以使用`source`命令(即`.`命令)来导入其他文件的函数[^14]。一般将一些工具函数，放在单独的文件中，形成独立的模块文件。
+可以使用`source`命令(即`.`命令)来导入其他文件的函数[^14]。有下面两种写法，如下
+
+* 使用`.`命令
+
+```shell
+. ./library.sh
+```
+
+* 使用`source`命令
+
+```shell
+source './library.sh'
+```
+
+
+
+一般将一些工具函数，放在单独的文件中，形成独立的模块文件。
 
 举个例子，library.sh是一个模块文件，如下
 
@@ -32,12 +48,12 @@ test_foo() {
     foo 2
 }
 
-if [[ "${1}" == "--source-only" ]]; then
+if [[ "${1}" == "--test" ]]; then
     test_foo "${@}"
 fi
 ```
 
-当library.sh接收选项`--source-only`时，则执行test_foo函数，否则不执行test_foo函数。这种方式可以用于在模块文件中，添加单测函数。
+当library.sh接收选项`--test`时，则执行test_foo函数，否则不执行test_foo函数。这种方式可以用于在模块文件中，添加单测函数。
 
 
 
@@ -46,10 +62,20 @@ use_library.sh是使用library.sh的业务方代码，如下
 ```shell
 #!/usr/bin/env bash
 
-. ./library.sh --source-only
+. ./library.sh
 
 foo 3
 ```
+
+
+
+### (2) 函数如何返回值
+
+TODO
+
+https://linuxhint.com/return-string-bash-functions/
+
+
 
 
 
