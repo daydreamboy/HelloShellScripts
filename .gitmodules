@@ -1,0 +1,3 @@
+[submodule "library/assert.sh"]
+	path = library/assert.sh
+	url = /Users/wesley_chen/GitHub_Projects/HelloShellScripts/library/assert.sh
