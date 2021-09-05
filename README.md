@@ -154,6 +154,431 @@ echo $?
 
 
 
+#### 使用out parameter
+
+在Bash 4.3+上支持nameref，可以用out parameter方式[^19]，来实现返回值。由于兼容性问题，不推荐这种比较前沿的方式。
+
+举个例子，如下
+
+```shell
+function return_value_using_out_parameter() {
+    local -n return_value=$1  # use nameref for indirection on Bash version 4.3+
+    return_value='return value from function return_value_using_echo'
+}
+
+return_value_using_out_parameter ${return_value4}
+echo ${return_value4}
+```
+
+
+
+### (3) 使用数组
+
+#### 定义数组
+
+Shell中使用一对括号来定义数组，如下
+
+```shell
+# Example1: array of numbers
+array1=(1 2 3)
+echo ${array1[0]}
+echo ${array1[1]}
+echo ${array1[2]}
+
+# Example2: array of strings
+array2=('1' '2' '3')
+echo ${array2[0]}
+echo ${array2[1]}
+echo ${array2[2]}
+
+# Example3: use string to create an array
+string='a b    c'
+array3=(${string})
+declare -p array3
+
+# Example4: use another array to create an array
+init_array1=('x' 'y' 'z')
+array4=(${init_array1[@]})
+declare -p array4
+
+# Example5: use another array to create an array
+init_array2=('x y z')
+array5=(${init_array2[@]})
+declare -p array5
+```
+
+括号中可以是字面常量（数字、字符串），而可以是变量（字符串、另一个数组等）。
+
+
+
+使用下标索引方式，可以获取到数组中的每个元素。如果要获取数组的所有元素，可以使用`array[@]`方式，如下
+
+```shell
+echo ${array2[@]}
+```
+
+它输出每个元素，并用空格分隔。
+
+说明
+
+> 1. 使用`${array2}`，是等价于`${array2[0]}`
+> 2. 示例代码，见array_definition.sh
+
+
+
+
+
+#### 操作数组 - 添加元素
+
+添加元素，有2种方式
+
+* 使用`+=`，可以添加另外一个数组。
+
+* 使用`(array1[@] array2[@])`组合方式
+
+
+
+举个例子，如下
+
+```shell
+# Example1: use array1+=array2
+array1=(1 2 3)
+array1+=(4 5 6)
+
+echo ${array1[@]}
+
+element='7'
+array1+=(${element})
+echo ${array1[@]}
+
+# Example2:  use (array1[@] array2[@])
+array2=(8)
+array3=(9)
+array4=(${array2[@]} ${array3[@]})
+echo ${array4[@]}
+```
+
+> 示例代码，见array_elements_add.sh
+
+
+
+#### 操作数组 - 删除元素
+
+这篇文章[^20]提出三种方式来删除数组中的元素，如下
+
+* 使用前缀匹配来删除元素
+* 使用unset命令删除元素
+* 使用子数组方式移除元素
+
+> 示例代码，见array_elements_delete.sh
+
+
+
+* 使用前缀匹配来删除元素
+
+使用前缀匹配来删除元素，不推荐使用，因为本质不是删除元素，而是删除每个元素的前缀字符串。
+
+举个例子，如下
+
+```shell
+function delete_elements_using_divide_sign() {
+    array=(hello world hi)
+    delete=(hello)
+    echo ${array[@]/$delete}
+    declare -p array
+
+    delete=(h)
+    echo ${array[@]/$delete}
+    declare -p array
+}
+```
+
+使用`${array[@]/$delete}`，将数组中每个元素进行前缀匹配，并删除前缀。当设置`delete=(h)`时，echo的输出结果是`ello world i`
+
+
+
+* 使用unset命令删除元素
+
+unset命令可以清除特定下标的元素。但是也不推荐使用，因为unset命令清除特定下标后，数组还是保留被清除的下标。例如数组中元素为1 2 3，使用unset命令清除下标0，然后再访问下标0的元素，得到是空，2和3依然位于下标1和2。
+
+举个例子，如下
+
+```shell
+function delete_elements_using_unset() {
+    array1=(1 2 3)
+    unset "array1[0]"
+
+    echo ${array1[@]}
+    declare -p array1
+
+    echo ${array1[0]} # not 2, but it's empty
+}
+```
+
+说明
+
+> 1. unset命令使用双引号是防止RubyMine中提示报错。
+> 2. 使用declare -p，可以打印数组的内部结构
+
+
+
+* 使用子数组方式移除元素
+
+使用子数组方式移除元素的方式，比较tricky，实际是获取原数组中多个子数组，然后将多个子数组组合起来，达到删除特定元素的目的。不推荐使用，实现起来也不容易通用化。
+
+举个例子，如下
+
+```shell
+function delete_elements_using_subarray() {
+    array=('e1' 'e2' 'e3' 'e4' 'e5' 'e6')
+    echo "${array[@]:0:2}" # get subarray [0,2) from the original array
+    echo "${array[@]:3}" # get subarray [3,+] from the original array
+
+    new_array=("${array[@]:0:2}" "${array[@]:3}") # make a new array from the two subarrays
+    echo "${array[@]}"
+}
+```
+
+这里借助了使用获取子数组的语法。
+
+`${array[@]:0:2}`获取子数组，区间是[0,2)。
+
+`${array[@]:3}`获取子数组，区间是[3,...]，即从下标3（包括3）到数组结尾
+
+
+
+#### 操作数组 - 遍历元素
+
+遍历数组中的元素，通过`${array[@]}`获取所有元素，然后结合for语句来实现。
+
+关于下标变量，有两种使用方式
+
+* 直接当成元素使用
+* 当成下标使用
+
+> 示例代码，见array_elements_enumerate.sh
+
+
+
+举个例子，如下
+
+```shell
+declare -a arr=("element1" "element2" "element3")
+
+# Example1: using $index
+for i in "${arr[@]}"
+do
+   echo "$i"
+done
+
+# Example2: use $array[index]
+for i in "${!arr[@]}"; do
+   echo "${i} = ${arr[${i}]}"
+done
+```
+
+可以看出下标变量是否当成元素使用，区分在于`${arr[@]}`和`${!arr[@]}`。
+
+
+
+#### 操作数组 - 是否包含元素
+
+SO这个回答[^21]，给一个比较正确的判断方式。通过字符串包含的方式（借助`=~`语法），来判断某个元素是否存在。
+
+示意代码，如下
+
+```shell
+if [[ " ${array[*]} " =~ " ${value} " ]]; then
+    # whatever you want to do when array contains value
+fi
+
+if [[ ! " ${array[*]} " =~ " ${value} " ]]; then
+    # whatever you want to do when array doesn't contain value
+fi
+```
+
+这里借助了字符串包含符号`=~`来判断某个元素是否存在。
+
+处理逻辑，如下
+
+* 使用`" ${array[*]} "`将数组展开成一个字符串，这个字符串前后都有一个空格。例如数组(1 2 3)，则会转成字符串" 1 2 3  "。
+
+* 使用`" ${value} "`将被检查的item，也转成一个前后有一个空格的字符串
+* 最后使用字符串包含符号`=~`来判断，前者字符串是否包含后者字符串
+
+
+
+注意
+
+> 1. 增加空格符，是必要的不能去掉。否则可能导致判断不准确。举个例子，如下
+>
+>    ```shell
+>    function example_not_correct_when_remove_space() {
+>        array=(1 2 3)
+>        value='1 '
+>    
+>        if [[ "${array[*]}" =~ "${value}" ]]; then
+>            echo "contains \"${value}\""
+>        fi
+>    
+>        if [[ ! "${array[*]}" =~ "${value}" ]]; then
+>            echo "not contains \"${value}\""
+>        fi
+>    }
+>    ```
+>
+>    结果输出是contains的，但是实际是'1 '应该不能判断在数组中的。
+>
+>    示例代码，见array_elements_query_contains.sh
+>
+> 2. 使用`${array[*]}`而不是`${array[@]}`，简单来说`${array[*]}`当成是一个变量，而`${array[@]}`当成是多个变量[^22]。具体参考”`${array[*]}`和`${array[@]}` 的区别“这一节。
+
+
+
+#### 操作数组 - 获取数组长度以及判空
+
+获取数组的有特定的语法，如下
+
+```shell
+array=(1 2 3 4)
+echo ${#array[@]}
+```
+
+> 示例代码，见array_check_empty.sh
+
+
+
+获取数组长度后，可以进一步判断数组是否为空
+
+```shell
+array1=()
+if [[ ${#array1[@]} -eq 0 ]]; then
+    echo "empty"
+else
+    echo "not empty"
+fi
+```
+
+> 示例代码，见array_check_empty.sh
+
+
+
+#### 如何返回数组
+
+Shell函数返回数组，是不支持的[^23]。但是可以通过其他方式来实现返回”数组“，这里介绍一种通过返回特定字符串（每个元素由空格分隔，后面简称”数组字符串“）的方式[^24]。
+
+举个例子，如下
+
+```shell
+function create_some_array() {
+    local -a a=('x86' 'i386' 'arm64')
+    echo ${a[@]}
+}
+```
+
+注意，这里create_some_array函数返回的值是数组，但是它仅包含一个元素，而且该元素是数组字符串。使用`declare -p`可以看到return_value的内容。
+
+```shell
+function create_some_array() {
+    local -a a=('x86' 'i386' 'arm64')
+    echo ${a[@]}
+}
+
+declare -a return_value=$(create_some_array)
+declare -p return_value
+```
+
+显然，这种返回值，不是期望的数据。但是如果错误认为返回值是对的，则使用下面的代码遍历元素，居然是成功。如下
+
+```shell
+for i in ${return_value[@]}; do
+   echo "${i}"
+done
+```
+
+但是这种不加双引号的写法不规范，如果加上双引号，就发现这种遍历是错误的。
+
+```shell
+for i in "${return_value[@]}"; do
+   echo "${i}"
+done
+```
+
+那么怎么正确处理返回的数组字符串，有种简单方法，如下
+
+```shell
+real_array1=($(create_some_array))
+declare -p real_array1
+```
+
+将返回值重新初始化另外一个数组。
+
+或者使用read命令重新将字符串读入到数组中，如下
+
+```shell
+IFS=', ' read -r -a real_array2 <<< "${return_value}"
+declare -p real_array2
+```
+
+
+
+#### 优雅实现删除元素
+
+```shell
+function array_remove_elements() {
+    declare -a original_array=(${!1})
+    declare -a elements_to_remove=(${!2})
+    declare -a return_array=()
+
+    for i in "${original_array[@]}"; do
+        if [[ ! " ${elements_to_remove[*]} " =~ " ${i} " ]]; then
+            return_array+=(${i})
+        fi
+    done
+
+    echo ${return_array[@]}
+}
+```
+
+> 示例代码，见array_tool.sh
+
+
+
+
+
+#### `${array[*]}`和`${array[@]}` 的区别
+
+简单来说`${array[*]}`当成是一个变量，而`${array[@]}`当成是多个变量[^22]。
+
+* `${array[*]}`将数组中的元素组成一个变量，它的值是所有元素并有空格分隔
+* `${array[@]}`代表每个元素的变量
+
+举个例子，如下
+
+```shell
+# Example1: use ${array[@]}
+array=(1 2 3)
+for i in "${array[@]}"; do
+    echo "example.$i"
+done
+
+echo '---------------'
+
+# Example2: use ${array[*]}
+array=(1 2 3)
+for i in "${array[*]}"; do
+    echo "example.$i"
+done
+
+# Example3: use ${array[@]}, ${array[*]} with printf
+printf 'data: ---%s---\n' "${array[@]}"
+printf 'data: ---%s---\n' "${array[*]}"
+```
+
+`for i in "${array[@]}"`将执行3次echo，而`for i in "${array[*]}"`则只执行一次echo。第三个example也是一样的逻辑。
+
+
+
 
 
 ## 2、环境变量
@@ -978,6 +1403,10 @@ References
 [^17]:https://www.geeksforgeeks.org/man-command-in-linux-with-examples/
 
 [^18]:https://linuxhint.com/return-string-bash-functions/
-
-
+[^19]:https://stackoverflow.com/a/49971213
+[^20]:https://linuxhint.com/remove-specific-array-element-bash/
+[^21]:https://stackoverflow.com/a/15394738
+[^22]:https://unix.stackexchange.com/questions/135010/what-is-the-difference-between-and-when-referencing-bash-array-values
+[^23]:https://cjungmann.github.io/yaddemo/docs/bashreturnarray.html
+[^24]:https://stackoverflow.com/a/24100864
 

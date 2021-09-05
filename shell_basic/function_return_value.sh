@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-##
 # Tutorial: https://linuxhint.com/return-string-bash-functions/
 # Three styles to return a value from the function
 
@@ -32,4 +31,13 @@ echo ${return_value3}
 
 return_value_using_return_clause
 echo $?
+
+# use nameref for indirection on Bash version 4.3+
+#function return_value_using_out_parameter() {
+#    local -n return_value=$1  # use nameref for indirection on Bash version 4.3+
+#    return_value='return value from function return_value_using_echo'
+#}
+#
+#return_value_using_out_parameter ${return_value4}
+#echo ${return_value4}
 

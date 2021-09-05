@@ -10,7 +10,7 @@
 #
 # @see https://stackoverflow.com/a/10586169
 #
-string_split() {
+function string_split() {
     separator=$1
     index=$2
     string=$3
@@ -29,7 +29,7 @@ string_split() {
 #
 # @see https://stackoverflow.com/a/15394738
 #
-string_split_contains() {
+function string_split_contains() {
     separator=$1
     check_item=$2
     string=$3
@@ -45,7 +45,7 @@ string_split_contains() {
     fi
 }
 
-string_split_not_contains() {
+function string_split_not_contains() {
     separator=$1
     check_item=$2
     string=$3
@@ -62,3 +62,6 @@ string_split_not_contains() {
 }
 
 
+function string_split_exclude_items() {
+
+}
