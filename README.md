@@ -71,9 +71,86 @@ foo 3
 
 ### (2) 函数如何返回值
 
-TODO
+函数如何返回值，这篇文章[^18]给出四种方式来实现。本文总结有三种方式
 
-https://linuxhint.com/return-string-bash-functions/
+* 使用全局变量
+
+* 使用函数命令（echo命令和$(function)结合）
+* 使用return语句
+
+说明
+
+> 1. 文中[^18]的**Example-3: Using Variable**的例子，实际也是使用全局变量实现，因此不能单独算作一种方式
+> 2. 示例代码，见function_return_value.sh
+
+
+
+#### 使用全局变量
+
+使用全局变量的方式，比较容易理解，但是代码维护比较困难，一般不推荐使用这种方式。
+
+举个例子，如下
+
+```shell
+# Style 1: use global variable
+function return_value_using_global_variable() {
+    return_value1='return value from function return_value_using_global_variable'
+}
+
+echo ${return_value1}
+return_value_using_global_variable
+echo ${return_value1}
+```
+
+这里全局变量return_value1，即使没有定义也可以使用，第一个echo ${return_value1}输出是空的。
+
+
+
+#### 使用函数命令（echo命令和$(function)结合）
+
+使用函数命令，即结合echo命令和$(function)调用的方式。这种方式比较推荐，也是比较常见的。
+
+举个例子，如下
+
+```shell
+function return_value_using_echo() {
+    local return_value='return value from function return_value_using_echo'
+    echo ${return_value}
+}
+
+return_value2=$(return_value_using_echo)
+echo ${return_value2}
+```
+
+注意
+
+> return_value_using_echo函数，必须使用$(function)方式，不能直接调用，不然echo命令会将返回值直接输出到stdout中
+
+
+
+#### 使用return语句
+
+和其他语言一样，Shell也有return语句，但是这个return语句仅代表函数的返回状态，即错误码的概念。因此return不支持返回字符串，只能是数字。而且获取返回值，也只能通过`$？`获取。由于这些限制，这种方式使用起来不方便，不推荐使用。
+
+举个例子，如下
+
+```shell
+function return_value_using_return_clause() {
+    return 35
+}
+
+return_value3=$(return_value_using_return_clause)
+echo ${return_value3}
+
+return_value_using_return_clause
+echo $?
+```
+
+这里echo ${return_value3}是没有输出的，必须使用`$？`获取返回值。
+
+注意
+
+> return语句返回字符串，shell执行会报错
 
 
 
@@ -899,6 +976,8 @@ References
 [^16]:https://superuser.com/questions/592323/how-do-i-become-root-on-mac-os-x/592324
 
 [^17]:https://www.geeksforgeeks.org/man-command-in-linux-with-examples/
+
+[^18]:https://linuxhint.com/return-string-bash-functions/
 
 
 
