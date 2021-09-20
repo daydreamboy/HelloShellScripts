@@ -1352,7 +1352,7 @@ PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%T}] '$PROMPT
 
 ### 1、MacOS常用使用技巧
 
-#### （1）以root用户登录shell[^16]
+#### (1) 以root用户登录shell[^16]
 
 ```shell
 $ sudo -i
@@ -1367,7 +1367,15 @@ TODO: https://superuser.com/questions/159486/how-to-kill-process-in-mac-os-x-and
 
 
 
+#### (2) 查看某个命令的位置
 
+使用`type -a <command>`方式，可以该命令的所有位置[^25]
+
+```shell
+$ type -a ls
+ls is an alias for ls -G
+ls is /bin/ls
+```
 
 
 
@@ -1409,4 +1417,6 @@ References
 [^22]:https://unix.stackexchange.com/questions/135010/what-is-the-difference-between-and-when-referencing-bash-array-values
 [^23]:https://cjungmann.github.io/yaddemo/docs/bashreturnarray.html
 [^24]:https://stackoverflow.com/a/24100864
+
+[^25]:https://stackoverflow.com/questions/2869100/shell-how-to-find-directory-of-some-command
 
