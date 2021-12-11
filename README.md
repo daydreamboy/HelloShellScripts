@@ -579,6 +579,45 @@ printf 'data: ---%s---\n' "${array[*]}"
 
 
 
+### (4) 历史展开功能
+
+Shell中为了减少打字，可以使用历史展开功能，比如使用简单的符号，展开成历史输入的某些命令。
+
+分为命令和单词展开2类[^26]，如下
+
+* 命令展开。使用!表示展开，后面不能跟着空格、换行等。`!n`表示第n个命令
+
+* 单词展开。使用$表示展开。
+
+
+
+#### a. `!$`
+
+`!$`结合`!`和`$`，表示展开上个命令的最后一个单词。
+
+举个例子，如下
+
+```shell
+$ echo Unix and Linux
+Unix and Linux
+$ echo !$
+$ echo Linux
+```
+
+当执行`echo !$`回车后，Shell终端会自动回显出`echo Linux`，这样实现展开功能。
+
+`!$`具体有什么作用，一般用于避免再次输入文件夹或者文件名。
+
+举个例子，如下
+
+```shell
+$ mkdir a_long_long_dir
+$ cd !$
+$ cd a_long_long_dir
+```
+
+
+
 
 
 ## 2、环境变量
@@ -638,9 +677,11 @@ bar
 
 
 
+
+
 ## 3、常用命令
 
-### （1） set
+### (1) set
 
 * `set -e`，脚本中任何命令执行失败，就停止执行脚本。如果不加，默认会继续执行脚本[^6]。
 
@@ -656,7 +697,7 @@ echo "will not out put something if any above command failed"
 
 
 
-### （2）grep
+### (2) grep
 
 #### a. 语法格式
 
@@ -793,7 +834,7 @@ $ git branch | grep -v \*
 
 
 
-### （3）pgrep
+### (3) pgrep
 
 释义：process grep    
 说明：在当前系统进程表中进行grep搜索   
@@ -818,7 +859,7 @@ $ pgrep -fl lldb
 
 
 
-### （4）ps
+### (4) ps
 
 #### a. 介绍
 
@@ -871,7 +912,7 @@ $ ps -fp `pgrep -x debugserver`
 
 
 
-### （5）md5
+### (5) md5
 
 格式：md5 [-pqrtx] [-s string] [files ...]
 
@@ -884,7 +925,7 @@ MD5 ("hell") = 4229d691b07b13341da53f17ab9f2416
 
 
 
-### （6）od
+### (6) od
 
 释义：octal, decimal, hex, ASCII dump工具
 
@@ -918,7 +959,7 @@ $ echo -n "Hello" | od -t x2
 
 
 
-### （7）networksetup
+### (7) networksetup
 
 #### a. 介绍
 
@@ -936,7 +977,7 @@ $ networksetup -setdnsservers Wi-Fi Empty
 
 
 
-### （8）ssh
+### (8) ssh
 
 #### a. 语法格式
 
@@ -975,7 +1016,38 @@ $ ssh root@<ip address> -p <port>
 
 
 
-### （9）ffmpeg
+### (9) ssh-keygen
+
+如何生成多个ssh key[^27]，如下
+
+```shell
+$ cd ~/.ssh
+$ ssh-keygen -t rsa
+```
+
+当执行`ssh-keygen -t rsa`，重新指定文件名，比如id_rsa_github
+
+```shell
+$ touch config
+$ vim config
+```
+
+然后编辑~/.ssh/config文件，如下
+
+```properties
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa_private_server
+  IdentityFile ~/.ssh/id_rsa_github
+  IdentityFile ~/.ssh/id_rsa_work_server
+```
+
+指定多个id_rsa_xxx文件
+
+
+
+### (10) ffmpeg
 
 
 
@@ -985,7 +1057,7 @@ ffmpeg -i "https://cdn3.lajiao-bo.com/20190912/awZxKqhT/index.m3u8" -bsf:a aac_a
 
 
 
-### （10）find
+### (11) find
 
 #### a. 使用示例
 
@@ -999,7 +1071,7 @@ $ find . -d -name "delete" -exec rm -r "{}" \;
 
 
 
-### （11）mktemp
+### (12) mktemp
 
 #### a. 介绍
 
@@ -1040,13 +1112,13 @@ drwx------  2 wesley_chen  staff  64 May  5 22:15 /var/folders/nb/0wzdfzd51p3_cd
 
 
 
-### （12）whereis
+### (13) whereis
 
 whereis查询命令行工具的位置
 
 
 
-### （13）zip
+### (14) zip
 
 zip用于压缩文件或文件夹。举个例子，如下
 
@@ -1070,7 +1142,7 @@ $ zip -er archivename.zip path/to/folder
 
 
 
-### （14）sed
+### (15) sed
 
 #### a. 介绍
 
@@ -1222,7 +1294,7 @@ s应该是substitute的缩写，该命令用于正则表达式匹配并替换。
 
 
 
-### （15）seq
+### (16) seq
 
 #### a. 介绍
 
@@ -1419,4 +1491,8 @@ References
 [^24]:https://stackoverflow.com/a/24100864
 
 [^25]:https://stackoverflow.com/questions/2869100/shell-how-to-find-directory-of-some-command
+
+[^26]:https://unix.stackexchange.com/questions/254568/shell-command-cd
+
+[^27]:https://stackoverflow.com/questions/24392657/adding-an-rsa-key-without-overwriting
 
