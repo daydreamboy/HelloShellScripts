@@ -753,13 +753,38 @@ $ grep [options] <pattern> <path/to/folder or file>
 
 ##### `-e`
 
-根据正则表达式匹配查找字符串。可以支持多个`-e`
+根据正则表达式匹配查找字符串。可以支持多个`-e`，它们是逻辑OR的关系。
 
 
 
 ##### `-v`
 
 反向匹配。过滤显示不满足正则匹配的结果。
+
+
+
+##### `--color=always`
+
+将匹配关键词高亮。
+
+```shell
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;35;40'
+```
+
+https://superuser.com/a/417152
+
+
+
+查找alias在哪里定义
+
+```shell
+$ zsh -ixc : 2>&1 | grep grep
+```
+
+https://unix.stackexchange.com/questions/322459/is-it-possible-to-check-where-an-alias-was-defined
+
+
 
 
 
@@ -1044,6 +1069,12 @@ Host *
 ```
 
 指定多个id_rsa_xxx文件
+
+
+
+说明
+
+> TODO: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 
 
