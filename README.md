@@ -761,6 +761,25 @@ $ grep [options] <pattern> <path/to/folder or file>
 
 反向匹配。过滤显示不满足正则匹配的结果。
 
+man手册描述，如下
+
+> **-v**, **--invert-match**
+>
+> ​       Selected lines are those not matching any of the specified patterns.
+
+举个例子，如下
+
+```shell
+$ git branch | grep \*
+* release/v1.1.0
+$ git branch | grep -v \*
+...
+```
+
+上面使用`-v`的命令，用于过滤出现每行中没有*号的行。
+
+
+
 
 
 ##### `--color=always`
