@@ -1458,9 +1458,33 @@ $ man -w mmap
 
 
 
+### (17) nc
+
+测试udp端口的连通性。举个例子，如下
+
+```shell
+$ nc -z -u a.b.c.d 8888
+```
 
 
-## 4、zsh
+
+
+
+## 4、Ctrl+z
+
+当执行命令时，命令未结束时，执行`Ctrl+z`，将挂起这个进程[^28]，并返回。
+
+涉及到几个命令
+
+* fg，将最近的进程设置为前台
+* bg，将最近的进程设置为后台
+* jobs，列出所有挂起的进程[^29]
+
+
+
+
+
+## 5、zsh
 
 ### （1）命令行提示增加时间[^13]
 
@@ -1545,4 +1569,7 @@ References
 [^26]:https://unix.stackexchange.com/questions/254568/shell-command-cd
 
 [^27]:https://stackoverflow.com/questions/24392657/adding-an-rsa-key-without-overwriting
+
+[^28]:https://superuser.com/questions/476873/what-is-effect-of-ctrl-z-on-a-unix-linux-application
+[^29]:https://unix.stackexchange.com/questions/45025/how-to-suspend-and-bring-a-background-process-to-foreground
 
