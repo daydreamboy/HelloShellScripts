@@ -1468,6 +1468,32 @@ $ nc -z -u a.b.c.d 8888
 
 
 
+```shell
+$ nc -zv 127.0.0.1 9000
+```
+
+
+
+
+
+### (18) zip/unzip
+
+TODO
+
+
+
+### (19) realpath
+
+
+
+### (20) md5sum
+
+https://www.quora.com/What-is-the-difference-between-OS-X-MD5-and-GNU-MD5sum
+
+
+
+TODO:https://unix.stackexchange.com/questions/109625/shell-scripting-z-and-n-options-with-if
+
 
 
 ## 4、Ctrl+z
