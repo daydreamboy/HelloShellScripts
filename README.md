@@ -1168,27 +1168,7 @@ whereis查询命令行工具的位置
 
 
 
-### (14) zip
-
-zip用于压缩文件或文件夹。举个例子，如下
-
-```shell
-$ zip -er archivename.zip path/to/folder
-```
-
-
-
-#### a. 常用选项
-
-##### `-r`
-
-压缩文件夹时，递归到里面的目录
-
-
-
-##### `-e`
-
-压缩使用密码
+### (14) TODO
 
 
 
@@ -1478,7 +1458,43 @@ $ nc -zv 127.0.0.1 9000
 
 ### (18) zip/unzip
 
+#### a. zip
+
+zip用于压缩文件或文件夹。举个例子，如下
+
+```shell
+$ zip -er archivename.zip path/to/folder
+```
+
+
+
+#### a. 常用选项
+
+##### `-r`
+
+压缩文件夹时，递归到里面的目录
+
+
+
+##### `-e`
+
+压缩使用密码
+
+
+
 TODO
+
+https://stackoverflow.com/questions/36323139/zip-two-file-with-same-content-but-final-md5sum-is-different
+
+
+
+#### b. unzip
+
+unzip -l zipfile
+
+https://superuser.com/questions/216617/view-list-of-files-in-zip-archive-on-linux
+
+
 
 
 
