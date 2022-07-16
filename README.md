@@ -1512,6 +1512,52 @@ TODO:https://unix.stackexchange.com/questions/109625/shell-scripting-z-and-n-opt
 
 
 
+### (21) alias/unalias
+
+#### a. alias
+
+##### 查看所有别名
+
+```shell
+$ alias
+```
+
+##### 搜索某个别名
+
+```shell
+$ alias | grep list
+gcf='git config --list'
+gdct='git describe --tags $(git rev-list --tags --max-count=1)'
+gstl='git stash list'
+```
+
+##### 设置别名
+
+```shell
+$ alias list='ls -l'
+$ list
+total 248
+...
+```
+
+注意
+
+> 如果需要别名一直生效，则需要在对应shell的配置文件中设置`alias list='ls -l'`
+
+
+
+#### b. unalias
+
+##### 移除别名[^30]
+
+```shell
+$ unalias list
+```
+
+
+
+
+
 ## 4、Ctrl+z
 
 当执行命令时，命令未结束时，执行`Ctrl+z`，将挂起这个进程[^28]，并返回。
@@ -1614,4 +1660,6 @@ References
 
 [^28]:https://superuser.com/questions/476873/what-is-effect-of-ctrl-z-on-a-unix-linux-application
 [^29]:https://unix.stackexchange.com/questions/45025/how-to-suspend-and-bring-a-background-process-to-foreground
+
+[^30]:https://askubuntu.com/questions/325368/how-do-i-remove-an-alias
 
