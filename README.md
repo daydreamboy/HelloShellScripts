@@ -759,7 +759,7 @@ $ grep [options] <pattern> <path/to/folder or file>
 
 ##### `-v`
 
-反向匹配。过滤显示不满足正则匹配的结果。
+反向匹配。过滤显示不满足正则匹配的结果[^31]。
 
 man手册描述，如下
 
@@ -1662,4 +1662,6 @@ References
 [^29]:https://unix.stackexchange.com/questions/45025/how-to-suspend-and-bring-a-background-process-to-foreground
 
 [^30]:https://askubuntu.com/questions/325368/how-do-i-remove-an-alias
+
+[^31]:https://superuser.com/questions/537619/grep-for-term-and-exclude-another-term
 
