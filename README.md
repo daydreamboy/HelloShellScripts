@@ -1440,19 +1440,44 @@ $ man -w mmap
 
 ### (17) nc
 
-测试udp端口的连通性。举个例子，如下
-
-```shell
-$ nc -z -u a.b.c.d 8888
-```
+nc (netcat)，主要用于测试网络进程。
 
 
+
+#### a. 测试tcp端口的连通性
 
 ```shell
 $ nc -zv 127.0.0.1 9000
 ```
 
+* -v，表示给出详细输出
+* -z，表示只扫描listening进程，并不发送任何给它们
 
+
+
+#### b. 测试udp端口的连通性
+
+举个例子，如下
+
+```shell
+$ nc -z -u a.b.c.d 8888
+```
+
+* -u，表示只扫描支持udp协议的端口
+
+
+
+#### c. 向某个长连接server发送数据
+
+举个例子，如下
+
+```objective-c
+$ echo "Hello from terminal" | nc -v 169.254.82.58 51533
+Connection to 169.254.82.58 port 51533 [tcp/*] succeeded!
+Welcome to the AsyncSocket Echo Server
+```
+
+最后一行信息，是长连接server返回的。
 
 
 
