@@ -1469,7 +1469,7 @@ $ nc -z -u a.b.c.d 8888
 
 #### c. 向某个长连接server发送数据
 
-举个例子，如下
+举个例子[^32]，如下
 
 ```objective-c
 $ echo "Hello from terminal" | nc -v 169.254.82.58 51533
@@ -1689,4 +1689,6 @@ References
 [^30]:https://askubuntu.com/questions/325368/how-do-i-remove-an-alias
 
 [^31]:https://superuser.com/questions/537619/grep-for-term-and-exclude-another-term
+
+[^32]:https://superuser.com/questions/206791/what-is-the-simplest-way-to-test-a-plain-socket-server
 
