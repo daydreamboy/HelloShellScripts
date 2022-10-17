@@ -620,6 +620,14 @@ $ cd a_long_long_dir
 
 
 
+### (5) 条件判断`[]`
+
+TODO: https://stackoverflow.com/questions/33569061/purpose-of-square-brackets-in-shell-scripts
+
+
+
+
+
 ## 2、环境变量
 
 ### (1) $SHELL
