@@ -12,3 +12,8 @@ pod "SomePod4", '1.0.1'
 
 pod 'SomePod5', "1.0.2"
 pod 'SomePod6', '1.0.3'
+
+
+def someMethod
+    pod "SomePod3", "1.0.1"
+end
