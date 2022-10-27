@@ -24,6 +24,18 @@ pod_change_list = [
   {
     :pod_name => 'SomePod6',
     :pod_version => '3.5.6'
+  },
+  {
+    :pod_name => 'SomePod7',
+    :pod_version => '3.5.7'
+  },
+  {
+    :pod_name => 'SomePod8',
+    :pod_version => '3.5.8'
+  },
+  {
+    :pod_name => 'SomePod9',
+    :pod_version => '3.5.9'
   }
 ]
 
@@ -43,7 +55,7 @@ def test_change_pod(pod_change_list)
   end
 end
 
-def test_change_pod_with_subspec(pod_change_list)
+def test_change_pod_with_subpod(pod_change_list)
   pod_change_list.each do |map|
     file_path = File.expand_path('../Podfile2.txt')
 
@@ -59,5 +71,5 @@ def test_change_pod_with_subspec(pod_change_list)
   end
 end
 
-# test_change_pod(pod_change_list)
-test_change_pod_with_subspec(pod_change_list)
+test_change_pod(pod_change_list)
+test_change_pod_with_subpod(pod_change_list)

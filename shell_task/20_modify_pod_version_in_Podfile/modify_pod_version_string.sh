@@ -22,6 +22,7 @@ FILE_PATH=$3
 COMMAND=pod
 QUOTES="('|\")"
 SPACE="[ \t]"
+POD_AHEAD=".*"
 
 # Case1: Change pod without subpod
 # pod 'xxx'
@@ -30,7 +31,7 @@ SPACE="[ \t]"
 # pod 'xxx', '<new version>'
 #
 # Note: use \1 to reserve the space ahead of pod
-sed -i "" -E "s/(${SPACE}*${COMMAND})${SPACE}*${QUOTES}${POD_NAME}${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}', '${POD_VERSION}'/" ${FILE_PATH}
+sed -i "" -E "s/(${POD_AHEAD}${COMMAND})${SPACE}*${QUOTES}${POD_NAME}${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}', '${POD_VERSION}'/" ${FILE_PATH}
 
 # Case2: Change pod with subpod
 # pod 'xxx/yyy'
@@ -39,4 +40,4 @@ sed -i "" -E "s/(${SPACE}*${COMMAND})${SPACE}*${QUOTES}${POD_NAME}${QUOTES}${SPA
 # pod 'xxx/yyy', '<new version>'
 #
 # Note: use set -x to check the substitution order, \1 \2 \3 and so on
-sed -i "" -E "s/(${SPACE}*${COMMAND})${SPACE}*${QUOTES}${POD_NAME}\/([^,]+)${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}\/\3', '${POD_VERSION}'/" ${FILE_PATH}
+sed -i "" -E "s/(${POD_AHEAD}${COMMAND})${SPACE}*${QUOTES}${POD_NAME}\/([^,]+)${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}\/\3', '${POD_VERSION}'/" ${FILE_PATH}

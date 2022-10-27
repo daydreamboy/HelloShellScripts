@@ -1646,10 +1646,11 @@ FILE_PATH=$3
 COMMAND=pod
 QUOTES="('|\")"
 SPACE="[ \t]"
+POD_AHEAD=".*"
 
-sed -i "" -E "s/(${SPACE}*${COMMAND})${SPACE}*${QUOTES}${POD_NAME}${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}', '${POD_VERSION}'/" ${FILE_PATH}
+sed -i "" -E "s/(${POD_AHEAD}${COMMAND})${SPACE}*${QUOTES}${POD_NAME}${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}', '${POD_VERSION}'/" ${FILE_PATH}
 
-sed -i "" -E "s/(${SPACE}*${COMMAND})${SPACE}*${QUOTES}${POD_NAME}\/([^,]+)${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}\/\3', '${POD_VERSION}'/" ${FILE_PATH}
+sed -i "" -E "s/(${POD_AHEAD}${COMMAND})${SPACE}*${QUOTES}${POD_NAME}\/([^,]+)${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}\/\3', '${POD_VERSION}'/" ${FILE_PATH}
 ```
 
 > 示例代码，见modify_pod_version_string.sh
@@ -1660,8 +1661,11 @@ sed -i "" -E "s/(${SPACE}*${COMMAND})${SPACE}*${QUOTES}${POD_NAME}\/([^,]+)${QUO
 * Podfile中pod方法，有可能换成自定义的方法调用，这里直接配置COMMAND变量
 * 需要处理单引号和双引号的写法
 * pod前面的空格，包括#等，需要保留
+* 考虑到可能会定义pod，比如my_pod 'xxx', '1.2.3'，但是需要替换它的版本号，使用POD_AHEAD变量来匹配
 
+注意
 
+> 除了pod 'xxx'形式的方法调用，以及注释之外，Podfile中其他地方，不能使用`pod`字符串，比如pod的名字包含`pod`，会导致意外的替换
 
 
 
