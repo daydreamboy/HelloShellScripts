@@ -15,6 +15,7 @@ pod 'SomePod6', '1.0.3'
 
 # pod 'SomePod7', '1.0.3'
 #pod 'SomePod8', '1.0.3'
+my_pod 'SomePod9', '1.0.3'
 
 def someMethod
     pod "SomePod3", "1.0.1"
