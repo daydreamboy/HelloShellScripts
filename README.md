@@ -1634,11 +1634,34 @@ pod 'yyy/zzz', '1.2.3'
 
 > pod的形式，实际是pod方法，它的入参还有hash类型，比如:path => 'path/to/podspec', :git=> 'xxx.git'等。这里暂时不考虑这些形式。
 
-这个shell脚本的主要逻辑是：使用sed提取`pod 'xxx',`部分和后面的部分，然后替换后面的部分为新的版本号。
+这个shell脚本的主要逻辑是，将指定pod的版本号换成新的版本号
 
-举个例子，如下
+示意代码，如下
 
-TODO
+```shell
+POD_NAME=$1
+POD_VERSION=$2
+FILE_PATH=$3
+
+COMMAND=pod
+QUOTES="('|\")"
+SPACE="[ \t]"
+
+sed -i "" -E "s/(${SPACE}*${COMMAND})${SPACE}*${QUOTES}${POD_NAME}${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}', '${POD_VERSION}'/" ${FILE_PATH}
+
+sed -i "" -E "s/(${SPACE}*${COMMAND})${SPACE}*${QUOTES}${POD_NAME}\/([^,]+)${QUOTES}${SPACE}*,?.*/\1 '${POD_NAME}\/\3', '${POD_VERSION}'/" ${FILE_PATH}
+```
+
+> 示例代码，见modify_pod_version_string.sh
+
+说明
+
+* 针对没有sub pod和有sub pod，对应2个sed命令
+* Podfile中pod方法，有可能换成自定义的方法调用，这里直接配置COMMAND变量
+* 需要处理单引号和双引号的写法
+* pod前面的空格，包括#等，需要保留
+
+
 
 
 

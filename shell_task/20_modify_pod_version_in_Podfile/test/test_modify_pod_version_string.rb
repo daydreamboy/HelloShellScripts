@@ -27,17 +27,37 @@ pod_change_list = [
   }
 ]
 
-pod_change_list.each do |map|
-  file_path = File.expand_path('../Podfile1.txt')
+def test_change_pod(pod_change_list)
+  pod_change_list.each do |map|
+    file_path = File.expand_path('../Podfile1.txt')
 
-  pod_name = map[:pod_name]
-  pod_version = map[:pod_version]
+    pod_name = map[:pod_name]
+    pod_version = map[:pod_version]
 
-  command = "sh ../modify_pod_version_string.sh #{pod_name} #{pod_version} #{file_path}"
-  puts "run command: #{command}"
-  `#{command}` # also use system command
-  if $?.to_i != 0
-    raise 'run shell failed'
+    command = "sh ../modify_pod_version_string.sh #{pod_name} #{pod_version} #{file_path}"
+    puts "run command: #{command}"
+    `#{command}` # also use system command
+    if $?.to_i != 0
+      raise 'run shell failed'
+    end
   end
 end
 
+def test_change_pod_with_subspec(pod_change_list)
+  pod_change_list.each do |map|
+    file_path = File.expand_path('../Podfile2.txt')
+
+    pod_name = map[:pod_name]
+    pod_version = map[:pod_version]
+
+    command = "sh ../modify_pod_version_string.sh #{pod_name} #{pod_version} #{file_path}"
+    puts "run command: #{command}"
+    `#{command}` # also use system command
+    if $?.to_i != 0
+      raise 'run shell failed'
+    end
+  end
+end
+
+# test_change_pod(pod_change_list)
+test_change_pod_with_subspec(pod_change_list)
