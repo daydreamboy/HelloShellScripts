@@ -1,0 +1,14 @@
+
+## This is the content of Podfile
+# use modify_pod_version_string.sh to change the content automatically
+#
+# Examples for pod 'xxx/yyy'
+
+pod "SomePod1/SubPod_1"
+pod 'SomePod2/SubPod-2'
+
+pod "SomePod3/SubPod3", "1.0.0"
+pod "SomePod4/SubPod4", '1.0.1'
+
+pod 'SomePod5/SubPod5', "1.0.2"
+pod 'SomePod6/SubPod6', '1.0.3'

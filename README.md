@@ -1605,13 +1605,40 @@ $ unalias list
 
 
 
-## 5、zsh
+## 5、使用zsh
 
-### （1）命令行提示增加时间[^13]
+### (1) 命令行提示增加时间[^13]
+
+在`~/.zshrc`文件中，增加下面一行，如下
 
 ```shell
 PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%T}] '$PROMPT
 ```
+
+
+
+## 6、常见任务
+
+### (1) 修改Podfile中的pod版本号
+
+在CI系统中，提交打包好的pod产物，有时候需要自动修改主工程的Podfile，因此需要shell脚本支持。
+
+如果主工程的Podfile都采用下面形式，如下
+
+```ruby
+pod 'xxx',
+pod 'yyy/zzz', '1.2.3'
+```
+
+说明
+
+> pod的形式，实际是pod方法，它的入参还有hash类型，比如:path => 'path/to/podspec', :git=> 'xxx.git'等。这里暂时不考虑这些形式。
+
+这个shell脚本的主要逻辑是：使用sed提取`pod 'xxx',`部分和后面的部分，然后替换后面的部分为新的版本号。
+
+举个例子，如下
+
+
 
 
 
