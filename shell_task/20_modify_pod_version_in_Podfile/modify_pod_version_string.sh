@@ -3,6 +3,12 @@
 ## Usage:
 # ./modify_pod_version_string.sh "<pod name>" "<pod version>" "<file path> or <dir path>"
 
+isDebug=true
+if [[ "$isDebug" = true ]] ; then
+  set -x
+  set -e
+fi
+
 POD_NAME=$1
 POD_VERSION=$2
 FILE_PATH=$3
@@ -12,6 +18,6 @@ COMMAND='pod'
 
 # pod 'xxx', '<old version>'
 #
-sed -i "" "s/\([ \t]*$COMMAND.*'$POD_NAME'.*,\).*[0-9a-z\-\.]*.*/\1 \'$POD_VERSION\'/" $FILE_PATH
+sed -i "" "s/\([ \t]*$COMMAND.*'${POD_NAME}'.*,\).*[0-9a-z\-\.]*.*/\1 \'$POD_VERSION\'/" $FILE_PATH
 # pod 'xxx/yyy', '<old version>'
 sed -i "" "s/\([ \t]*$COMMAND.*'$POD_NAME\/[a-zA-Z]*'.*,\).*[0-9a-z\-\.]*.*/\1 \'$POD_VERSION\'/" $FILE_PATH
