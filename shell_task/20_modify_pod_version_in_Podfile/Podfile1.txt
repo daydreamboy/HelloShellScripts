@@ -4,7 +4,7 @@
 #
 # Examples for pod 'xxx'
 
-pod "SomePod1"  # This is a comment
+pod "SomePod1"
 pod 'SomePod2'
 
 pod "SomePod3", "1.0.0"
@@ -19,5 +19,23 @@ my_pod 'SomePod9', '1.0.3'
 
 def someMethod
     pod "SomePod3", "1.0.1"
+end
+
+
+pod "SomePod1" # This is a comment
+pod 'SomePod2' # This is a comment
+
+pod "SomePod3", "1.0.0" # This is a comment
+pod "SomePod4", '1.0.1' # This is a comment
+
+pod 'SomePod5', "1.0.2" # This is a comment
+pod 'SomePod6', '1.0.3' # This is a comment
+
+# pod 'SomePod7', '1.0.3' # This is a comment
+#pod 'SomePod8', '1.0.3' # This is a comment
+my_pod 'SomePod9', '1.0.3' # This is a comment
+
+def someMethod
+    pod "SomePod3", "1.0.1" # This is a comment
 end
 
