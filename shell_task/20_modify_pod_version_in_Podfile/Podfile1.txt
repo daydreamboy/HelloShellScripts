@@ -4,7 +4,7 @@
 #
 # Examples for pod 'xxx'
 
-pod "SomePod1"
+pod "SomePod1"  # This is a comment
 pod 'SomePod2'
 
 pod "SomePod3", "1.0.0"
