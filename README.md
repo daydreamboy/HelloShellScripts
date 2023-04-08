@@ -1617,6 +1617,17 @@ PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%T}] '$PROMPT
 
 
 
+### (2) zsh的配置文件
+
+检查下面几个文件
+
+* `.zshrc`
+* `.zshenv`
+* `.zprofile`
+* `.zlogin`
+
+
+
 ## 6、常见任务
 
 ### (1) 修改Podfile中的pod版本号
@@ -1666,6 +1677,177 @@ sed -i "" -E "s/(${POD_AHEAD}${COMMAND})${SPACE}*${QUOTES}${POD_NAME}\/([^,]+)${
 注意
 
 > 除了pod 'xxx'形式的方法调用，以及注释之外，Podfile中其他地方，不能使用`pod`字符串，比如pod的名字包含`pod`，会导致意外的替换
+
+
+
+### (2) 检查source命令调用
+
+source是Bash内置命令，同时和`.`命令是一样的。用于在当前shell环境中，执行一个文件，格式是`. filename [arguments]`。如果文件的路径不是绝对路径，则会在`$PATH`中查找这个文件。
+
+参考GNU稳定对`.`命令的描述[^33]，如下
+
+> Read and execute commands from the filename argument in the current shell context. If filename does not contain a slash, the `PATH`variable is used to find filename, but filename does not need to be executable.
+
+有些自定义的脚本，为了能在新打开shell中，注入自定义命令，通常做法是
+
+* 使用source命令执行脚本
+* 放source命令调用放在shell的资源文件中，例如`.profile`等
+
+为了检查某些自定义命令安装后，是通过哪个shell资源文件中source命令调用注入的，下面介绍bash和zsh的检查方式。
+
+说明
+
+> 使用`ls -la ~ | grep -e " \..*"`，可以筛选出在`~`文件夹下的以`.`开头的文件或文件夹
+
+
+
+#### a. 使用bash
+
+如果使用bash，则可以使用内置命令`caller`来检查source命令的调用者。
+
+`caller`命令的格式是`caller [expr]`
+
+* 如果没有expr参数，caller命令返回行号、source文件名参数
+* 如果expr是非负整数(0、1、2……)，则caller命令返回行号、routine名字、source文件名参数
+
+expr指定0、1、2等，表示调用栈的第一层、第二层、第三层等。
+
+举个没有没有expr参数的例子，如下
+
+```shell
+# callee_script.sh
+#!/usr/bin/env bash
+
+caller 0
+```
+
+
+
+```shell
+# intermediate_call_1.sh
+#!/usr/bin/env bash
+
+source ./callee_script.sh
+```
+
+执行命令，如下
+
+```shell
+$ ./intermediate_call_1.sh
+3 ./intermediate_call_1.sh
+```
+
+
+
+将callee_script.sh的内容换成下面，如下
+
+```
+# callee_script.sh
+#!/usr/bin/env bash
+
+caller 0
+```
+
+执行命令，如下
+
+```shell
+./intermediate_call_1.sh
+3 main ./intermediate_call_1.sh
+```
+
+可见caller传入0或不传，会返回第一层调用者的信息：行号、routine和文件名
+
+
+
+在SO这个回答[^34]包装caller命令，用于打印调用栈，如下
+
+```shell
+function callstack {
+   # Note: index `i` start with 1, not 0, will ignore this function call
+   # For more accurate, let i start with 0
+   local i=0 line file func
+   while read -r line func file < <(caller $i); do
+      echo >&2 "[$i] $file:$line $func(): $( if [[ -f $file ]]; then sed -n ${line}p $file; fi )"
+      ((i++))
+   done
+}
+```
+
+上面caller的expr参数从1开始递增，忽略callstack函数调用caller这一层调用。
+
+举个使用例子，如下
+
+test_callstack_tool_callee.sh，是使用callstack函数的脚本，如下
+
+```shell
+#!/usr/bin/env bash
+
+source '../callstack_tool.sh'
+
+callstack
+```
+
+test_callstack_tool.sh，是使用source命令调用上面脚本的脚本，如下
+
+```shell
+#!/usr/bin/env bash
+
+source './test_callstack_tool_callee.sh'
+```
+
+执行下面命令，如下
+
+```shell
+./test_callstack_tool.sh     
+[0] ./test_callstack_tool_callee.sh:5 source(): callstack
+[1] ./test_callstack_tool.sh:3 main(): source './test_callstack_tool_callee.sh'
+```
+
+得到结果是正确的。
+
+
+
+#### b. 使用zsh
+
+在zshell中并没有caller命令，示例如下
+
+```shell
+$ zsh ./test_callstack_tool.sh
+callstack:3: command not found: caller
+```
+
+参考这篇回答[^35]，可以利用`$funcfiletrace`来替代`caller`命令。
+
+示例代码，如下
+
+```shell
+function callstack_zsh {
+   # Note: index `i` start with 1, and include this function call
+   local i=1 line file
+   frame=$funcfiletrace[$i]
+
+   while [[ ! -z $frame ]]; do
+       IFS=":"
+       read -r file line <<< "$frame"
+       echo >&2 "[$i] $file:$line: $( if [[ -f $file ]]; then sed -n ${line}p $file; fi )"
+       ((i++))
+       frame=$funcfiletrace[$i]
+   done
+}
+```
+
+测试输出结果，如下
+
+```shell
+$ ./test_zsh_callstack_tool.zsh
+[1] ./test_zsh_callstack_tool_callee.zsh:15: callstack_zsh
+[2] ./test_zsh_callstack_tool_intermediate_1.zsh:3: source './test_zsh_callstack_tool_callee.zsh'
+[3] ./test_zsh_callstack_tool.zsh:5: source './test_zsh_callstack_tool_intermediate_1.zsh'
+```
+
+> 示例代码，见callstack_tool.sh
+
+
 
 
 
@@ -1753,4 +1935,11 @@ References
 [^31]:https://superuser.com/questions/537619/grep-for-term-and-exclude-another-term
 
 [^32]:https://superuser.com/questions/206791/what-is-the-simplest-way-to-test-a-plain-socket-server
+
+[^33]:https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#index-_002e
+
+[^34]:https://stackoverflow.com/questions/51653450/show-call-stack-in-bash
+[^35]:https://unix.stackexchange.com/questions/453144/functions-calling-context-in-zsh-equivalent-of-bash-caller
+
+
 
