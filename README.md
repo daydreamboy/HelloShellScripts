@@ -1628,6 +1628,12 @@ PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%T}] '$PROMPT
 
 
 
+### (3) zsh更新版本
+
+优先使用命令`omz update`，如果是老版本，可能没有这个命令，使用`upgrade_oh_my_zsh`[^36]。
+
+
+
 ## 6、常见任务
 
 ### (1) 修改Podfile中的pod版本号
@@ -1940,6 +1946,8 @@ References
 
 [^34]:https://stackoverflow.com/questions/51653450/show-call-stack-in-bash
 [^35]:https://unix.stackexchange.com/questions/453144/functions-calling-context-in-zsh-equivalent-of-bash-caller
+
+[^36]:https://stackoverflow.com/questions/17648621/how-do-i-update-zsh-to-the-latest-version
 
 
 
