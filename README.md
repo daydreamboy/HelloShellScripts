@@ -1107,11 +1107,45 @@ Host *
 
 ### (10) ffmpeg
 
+```shell
+$ ffmpeg -i "https://cdn3.lajiao-bo.com/20190912/awZxKqhT/index.m3u8" -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 file.mp4
+```
 
+
+
+#### a. ffprobe
+
+ffmpeg安装后，会默认安装ffprobe命令，它的用法，如下
 
 ```shell
-ffmpeg -i "https://cdn3.lajiao-bo.com/20190912/awZxKqhT/index.m3u8" -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 file.mp4
+$ffprobe --help
+...
+Simple multimedia streams analyzer
+usage: ffprobe [OPTIONS] INPUT_FILE
 ```
+
+举个例子，如下
+
+```shell
+$ ffprobe <some video>.mp4
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '<some video>.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.20.100
+  Duration: 00:03:07.33, start: 0.000000, bitrate: 1090 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x544, 1035 kb/s, 30 fps, 30 tbr, 90k tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 47 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+```
+
+
 
 
 
