@@ -622,9 +622,18 @@ $ cd a_long_long_dir
 
 ### (5) 条件判断`[]`
 
-TODO: https://stackoverflow.com/questions/33569061/purpose-of-square-brackets-in-shell-scripts
+在shell中`[`实际是一个命令，它也和test命令的别名，而`]`是`[`命令的最后一个参数[^37]。
+
+使用`man [`或者`man test`可以查看它的用法。
 
 
+
+#### a. `[ ]`  vs `[[ ]]`
+
+这篇SO[^38]比较了`[ ]`  和 `[[ ]]`，如下
+
+* `[ ]`是POSIX系统上的`[`命令和参数`]`的组合
+* `[[ ]]`是Bash语法，它的文档在[这里](https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html#index-_005b_005b)
 
 
 
@@ -1982,6 +1991,9 @@ References
 [^35]:https://unix.stackexchange.com/questions/453144/functions-calling-context-in-zsh-equivalent-of-bash-caller
 
 [^36]:https://stackoverflow.com/questions/17648621/how-do-i-update-zsh-to-the-latest-version
+
+[^37]:https://stackoverflow.com/questions/33569061/purpose-of-square-brackets-in-shell-scripts
+[^38]:https://stackoverflow.com/a/47576482
 
 
 
