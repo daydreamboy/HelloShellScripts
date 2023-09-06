@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # 
 # References:
 #   http://www.dreamsyssoft.com/unix-shell-scripting/ifelse-tutorial.php

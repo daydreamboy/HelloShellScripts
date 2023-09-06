@@ -7,7 +7,7 @@ function dump_var() {
 
     is_verbose=${2:-"false"}
 
-    if [[ "$is_verbose" == "true" ]]; then
+    if [[ "$is_verbose" = "true" ]]; then
       caller_file=''
       caller_line=''
       caller_code=''
