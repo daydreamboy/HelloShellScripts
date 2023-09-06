@@ -5,19 +5,25 @@ function dump_var() {
     # Note: ${!var_name} is indirect reference
     var_value=${!var_name}
 
-    caller_file=''
-    caller_line=''
-    caller_code=''
+    is_verbose=${2:-"false"}
 
-    local i=0 line file func
-    while read -r line func file < <(caller $i); do
-      #echo >&2 "[$i] $file:$line $func(): $( if [[ -f $file ]]; then sed -n ${line}p $file; fi )"
-      caller_file=$file
-      caller_line=$line
-      caller_code=$( if [[ -f $file ]]; then sed -n ${line}p $file; fi )
-      break
-    done
+    if [[ "$is_verbose" == "true" ]]; then
+      caller_file=''
+      caller_line=''
+      caller_code=''
 
-    echo "[dump_tool] $var_name = '$var_value' ($caller_file:$caller_line:'$caller_code')"
+      local i=0 line file func
+      while read -r line func file < <(caller $i); do
+        #echo >&2 "[$i] $file:$line $func(): $( if [[ -f $file ]]; then sed -n ${line}p $file; fi )"
+        caller_file=$file
+        caller_line=$line
+        caller_code=$( if [[ -f $file ]]; then sed -n ${line}p $file; fi )
+        break
+      done
+
+      echo "[dump_tool] $var_name = '$var_value' ($caller_file:$caller_line:'$caller_code')"
+    else
+      echo "[dump_tool] $var_name = '$var_value'"
+    fi
 }
 
