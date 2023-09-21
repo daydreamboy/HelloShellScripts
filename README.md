@@ -895,6 +895,25 @@ $ git branch | grep -v \*
 
 
 
+##### 匹配内容统计个数
+
+使用grep匹配特定行，提取捕获内容，将捕获内容分组，统计每组的个数
+
+举个例子，如下
+
+```shell
+$ grep -oE "\[-W.*\]" /path/to/somefile.log | sort | uniq -c                         
+52872 [-Wdocumentation]
+ 908 [-Wduplicate-method-match]
+   4 [-Wenum-conversion]
+...
+```
+
+* `-o`选项，仅输出匹配的内容
+* `-E`选项，使用扩展的正则表达式。实际这里使用`-e`也可以。
+
+
+
 ### (3) pgrep
 
 释义：process grep    
