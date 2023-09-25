@@ -1651,6 +1651,64 @@ $ unalias list
 
 
 
+#### (22) /usr/libexec/PlistBuddy
+
+PlistBuddy是操作plist文件的系统内置工具，它位于/usr/libexec/PlistBuddy，但不在PATH环境中，不能直接使用PlistBuddy命令，而需要使用/usr/libexec/PlistBuddy。
+
+/usr/libexec/PlistBuddy的用法，如下
+
+```shell
+$ /usr/libexec/PlistBuddy 
+Usage: PlistBuddy [-cxh] <file.plist>
+    -c "<command>" execute command, otherwise run in interactive mode
+    -x output will be in the form of an xml plist where appropriate
+    -h print the complete help info, with command guide
+```
+
+不指定参数，PlistBuddy会进入交互式模式。
+
+使用`-c`参数用于指定一个命令，常用的命令，如下
+
+```shell
+$ man PlistBuddy
+     The following commands are used to manipulate plist data:
+     Help        Prints this information.
+     Exit        Exits the program. Changes are not saved to the file.
+     Save        Saves the current changes to the file.
+     Revert      Reloads the last saved version of the file.
+     Clear type  Clears out all existing entries, and creates root of type type.  See below for a list of types.
+     Print [entry]
+                 Prints value of entry.  If an entry is not specified, prints entire file. See below for an explanation of how entry works.
+     Set entry value
+                 Sets the value at entry to value.
+     Add entry type [value]
+                 Adds entry with type type and optional value value.  See below for a list of types.
+     Copy entrySrc entryDst
+                 Copies the entrySrc property to entryDst.
+     Delete entry
+                 Deletes entry from the plist.
+     Merge file [entry]
+                 Adds the contents of plist file to entry.
+     Import entry file
+                 Creates or sets entry to the contents of file.
+```
+
+举个几个例子，如下
+
+```shell
+# 查询所有key和value
+$ /usr/libexec/PlistBuddy -c "Print" ./Info.plist
+# 查询某个key，key path使用:分隔，数组下标从0开始。例如:CFBundleDocumentTypes:2:CFBundleTypeExtensions
+$ /usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" ./Info.plist
+1.0
+# 修改某个key的value
+$ /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString 1.1" ./Info.plist
+# 添加新的key和value
+$ /usr/libexec/PlistBuddy -c "Add :CFBundleShortVersionString2 string 0.0.1" ./Info.plist
+# 删除某个key和value
+$ /usr/libexec/PlistBuddy -c "Delete :CFBundleShortVersionString2" ./Info.plist
+```
+
 
 
 ## 4、Ctrl+z
