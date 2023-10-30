@@ -1651,7 +1651,7 @@ $ unalias list
 
 
 
-#### (22) /usr/libexec/PlistBuddy
+### (22) /usr/libexec/PlistBuddy
 
 PlistBuddy是操作plist文件的系统内置工具，它位于/usr/libexec/PlistBuddy，但不在PATH环境中，不能直接使用PlistBuddy命令，而需要使用/usr/libexec/PlistBuddy。
 
@@ -1754,7 +1754,7 @@ PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%T}] '$PROMPT
 
 
 
-## 6、常见任务
+## 6、常见问题
 
 ### (1) 修改Podfile中的pod版本号
 
@@ -1975,6 +1975,57 @@ $ ./test_zsh_callstack_tool.zsh
 
 
 
+### (3) /bin/bash和/bin/sh的区别
+
+* `/bin/sh`是一个符合POSIX标准的Shell解释器，它通常是一个符号链接，指向操作系统的默认Shell解释器。在不同的操作系统中，`/bin/sh`可能指向不同的Shell，如Bourne Shell (`sh`)、Dash (`dash`)或Bash (`bash`)等。
+* `/bin/bash`是Bash（Bourne Again Shell）的Shell解释器，是常见的Unix和Linux系统中默认的Shell。
+
+在MacOS上，执行下面命令，可以看出sh实际就是bash，如下
+
+```shell
+$ /bin/sh --version
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin22)
+Copyright (C) 2007 Free Software Foundation, Inc.
+$ /bin/bash --version
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin22)
+Copyright (C) 2007 Free Software Foundation, Inc.
+```
+
+
+
+### (4) alias文件、符号链接文件(symbolic link)和硬链接文件(hard link)
+
+在MacOS上，alias文件、软链接文件和硬链接文件是三种不同的文件[^39]，通过不同的方式创建的。
+
+* alias文件：使用Finder，选择文件或文件夹，右键菜单，选择Make Alias
+* 软链接文件：使用`ln -s source_file target_file`
+* 硬链接文件：使用`ln source_file target_file`
+
+
+
+#### a. 创建符号链接文件(symbolic link)
+
+```shell
+# 文件
+$ ln -s orignal_file.txt soft_link_file
+$ ls -l soft_link_file
+lrwxr-xr-x  1 wesley_chen  staff  16 Oct 30 11:40 soft_link_file -> orignal_file.txt
+# 文件夹
+ls -ld soft_link_folder 
+lrwxr-xr-x  1 wesley_chen  staff  14 Oct 30 11:40 soft_link_folder -> orignal_folder
+```
+
+
+
+#### b. 创建硬链接文件(hard link)
+
+```shell
+```
+
+
+
+
+
 
 
 ## 附录
@@ -2071,6 +2122,8 @@ References
 
 [^37]:https://stackoverflow.com/questions/33569061/purpose-of-square-brackets-in-shell-scripts
 [^38]:https://stackoverflow.com/a/47576482
+
+[^39]:https://apple.stackexchange.com/questions/240542/cant-cd-into-alias
 
 
 
