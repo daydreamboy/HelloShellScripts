@@ -1998,7 +1998,7 @@ Copyright (C) 2007 Free Software Foundation, Inc.
 在MacOS上，alias文件、软链接文件和硬链接文件是三种不同的文件[^39]，通过不同的方式创建的。
 
 * alias文件：使用Finder，选择文件或文件夹，右键菜单，选择Make Alias
-* 软链接文件：使用`ln -s source_file target_file`
+* 符号链接文件：使用`ln -s source_file target_file`
 * 硬链接文件：使用`ln source_file target_file`
 
 
@@ -2020,7 +2020,16 @@ lrwxr-xr-x  1 wesley_chen  staff  14 Oct 30 11:40 soft_link_folder -> orignal_fo
 #### b. 创建硬链接文件(hard link)
 
 ```shell
+$ ln orignal_file.txt hard_link_file
+$ ls -l hard_link_file 
+-rw-r--r--@ 2 wesley_chen  staff  21 Oct 30 14:05 hard_link_file
 ```
+
+关于MacOS上hard link，存在一些问题，当原文件更新时，hard link文件没有更新，参考这篇[SO](https://stackoverflow.com/questions/9298589/hard-link-to-a-file-not-working-as-expected-on-os-x)。推荐不要使用硬链接文件(hard link)
+
+
+
+#### c. shell中检查是否是alias文件
 
 
 
