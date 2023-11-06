@@ -2031,9 +2031,35 @@ $ ls -l hard_link_file
 
 #### c. shell中检查是否是alias文件
 
+shell中检查是否是alias文件，有两种方式：
 
+* 使用file命令，会打印"MacOS Alias file"信息
+* 使用mdls命令
 
+示例代码，如下
 
+```shell
+#!/usr/bin/env bash
+
+alias_path="./alias_file"
+# Note: /Users/xxx/Downloads/folder_alias: MacOS Alias file
+if [[ $(file "$alias_path") == *[aA]lias* ]]; then
+  echo "is alias file: YES"
+else
+  echo "is alias file: NO"
+fi
+
+alias_path="./alias_folder"
+if [[ -f "$alias_path" ]] && mdls -raw -name kMDItemContentType "$alias_path" 2>/dev/null | grep -q '^com\.apple\.alias-file$'; then
+  echo "is alias file: YES"
+else
+  echo "is alias file: NO"
+fi
+```
+
+但是上面两个命令，都不能解析alias文件，获取原始文件/文件夹路径。
+
+> 使用自定义实现命令行工具，可以解析到原始路径，见HelloURL/alias_tool工具。
 
 
 
