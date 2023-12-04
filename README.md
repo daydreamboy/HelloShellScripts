@@ -797,18 +797,71 @@ $ git branch | grep -v \*
 
 
 
-
-
 ##### `--color=always`
 
-将匹配关键词高亮。
+grep命中匹配，默认不会高亮匹配词。使用下面配置，将匹配关键词高亮[^40]
 
 ```shell
 export GREP_OPTIONS='--color=always'
 export GREP_COLOR='1;35;40'
 ```
 
-https://superuser.com/a/417152
+说明
+
+> 如果使用zsh，可以在`.zshrc`文件中配置。
+
+
+
+##### `--color=never`
+
+如果在shell配置过`--color=always`，在脚本中执行grep命令，可能会导致意外的问题。
+
+举个例子，如下
+
+```shell
+#!/usr/bin/env bash
+text='"http": "https://www.baidu.com/"'
+
+# Note: The issue case
+# Step1: find "http" word
+# Step2: change `"` to a space
+# Step3: only select first line
+# Step4: split by whitespace into three parts: http : https://www.baidu.com/
+# If grep has color option, awk '{print $3}' maybe not get the correct part
+#
+result=$(echo $text | grep '"http"' | sed -e 's/"/ /g' | sed -n "1p" | awk '{print $3}')
+echo "$result"
+
+# Note: dump string as hex
+result=$(echo $text | grep '"http"' | sed -e 's/"/ /g' | sed -n "1p")
+echo "$result" | hexdump -C
+
+# Note: the actual index is $4
+result=$(echo $text | grep '"http"' | sed -e 's/"/ /g' | sed -n "1p" | awk '{print $4}')
+echo "$result"
+```
+
+上面例子中，使用grep搜索文本中的http，并使用awk分割列。由于grep使用颜色，会插入颜色码，导致分割出的数组不是预期的三个元素。因此，`awk '{print $3}'`获取第三列，取的不是"https://www.baidu.com/"，而是`:`。
+
+处理类似这种问题，使用grep明确指定`--color=never`选项，这样能避免颜色码引起的问题。
+
+修复后的脚本，如下
+
+```shell
+#!/usr/bin/env bash
+
+text='"http": "https://www.baidu.com/"'
+
+# Note: use expected index $3 to get correct part
+result=$(echo $text | grep '"http"' --color=never | sed -e 's/"/ /g' | sed -n "1p" | awk '{print $3}')
+echo $result
+```
+
+> 示例代码，见23_grep_issue_with_color
+
+
+
+
 
 
 
@@ -819,6 +872,10 @@ $ zsh -ixc : 2>&1 | grep grep
 ```
 
 https://unix.stackexchange.com/questions/322459/is-it-possible-to-check-where-an-alias-was-defined
+
+
+
+##### 
 
 
 
@@ -1322,7 +1379,7 @@ world!%
 
 
 
-使用`-n`输出，如下
+使用`-n`选项输出，如下
 
 ```shell
 $ sed -n 1,2p bar.txt
@@ -1330,7 +1387,7 @@ Hello,
 world!%                        
 ```
 
-不使用`-n`输出，如下
+不使用`-n`选项输出，如下
 
 ```shell
 $ sed 1,2p bar.txt 
@@ -2159,6 +2216,8 @@ References
 [^38]:https://stackoverflow.com/a/47576482
 
 [^39]:https://apple.stackexchange.com/questions/240542/cant-cd-into-alias
+
+[^40]:https://superuser.com/a/417152
 
 
 
