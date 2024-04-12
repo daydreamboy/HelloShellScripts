@@ -875,10 +875,6 @@ https://unix.stackexchange.com/questions/322459/is-it-possible-to-check-where-an
 
 
 
-##### 
-
-
-
 
 
 #### c. 常见用法
@@ -1295,7 +1291,27 @@ whereis查询命令行工具的位置
 
 
 
-### (14) TODO
+### (14) plutil
+
+plist文件的操作工具。
+
+查询app的版本号，如下
+
+```shell
+$ plutil -p /Applications/Xcode.app/Contents/Info.plist | grep CFBundleShortVersionString
+  "CFBundleShortVersionString" => "15.1"
+```
+
+使用defaults工具也可以同样实现，如下
+
+```shell
+$ defaults read /Applications/Xcode.app/Contents/Info.plist CFBundleShortVersionString
+15.1
+```
+
+
+
+
 
 
 
