@@ -861,6 +861,17 @@ echo $result
 
 
 
+##### `-o`
+
+只输出匹配部分的字符。
+
+举个例子，如下
+
+```shell
+$ echo "Hello, world" | grep -e "ll" -o   
+ll
+```
+
 
 
 
@@ -1785,6 +1796,49 @@ $ /usr/libexec/PlistBuddy -c "Add :CFBundleShortVersionString2 string 0.0.1" ./I
 # 删除某个key和value
 $ /usr/libexec/PlistBuddy -c "Delete :CFBundleShortVersionString2" ./Info.plist
 ```
+
+
+
+### (23) curl
+
+参考[这篇文章](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)提供的例子，介绍curl的常见用法。
+
+| 选项                          | 作用                          |
+| ----------------------------- | ----------------------------- |
+| `-d, --data <data>`           | 设置POST请求的数据            |
+| `-H, --header <header/@file>` | 设置请求的header              |
+| `-i`                          | 显示http response的header     |
+| `-X, --request <method>`      | 设置请求方法，例如GET、POST等 |
+
+
+
+#### a. 发送json数据
+
+方式1：使用`-d`选项
+
+```shell
+curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
+```
+
+
+
+方式2：使用`--json`选项
+
+```shell
+curl -X POST https://example.com --json '{ "drink": "coffe" }'
+```
+
+`--json`等价于下面的选项，如下
+
+```
+--data [arg]
+--header "Content-Type: application/json"
+--header "Accept: application/json"
+```
+
+
+
+
 
 
 
