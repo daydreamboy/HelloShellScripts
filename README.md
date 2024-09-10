@@ -2194,6 +2194,115 @@ fi
 
 
 
+### (5) where/whereis/which/type的区别
+
+
+
+#### a. where
+
+where是shell内置命令。
+
+举个例子，如下
+
+```shell
+$ where pod  
+/Users/wesley_chen/.xxx/bin/pod
+/Users/wesley_chen/.rvm/gems/ruby-2.6.3/bin/pod
+/Users/wesley_chen/.rvm/rubies/ruby-2.6.3/bin/pod
+$ which -a pod
+/Users/wesley_chen/.xxx/bin/pod
+/Users/wesley_chen/.rvm/gems/ruby-2.6.3/bin/pod
+/Users/wesley_chen/.rvm/rubies/ruby-2.6.3/bin/pod
+```
+
+
+
+#### b. whereis
+
+whereis是一个系统内置的命令。
+
+举个例子，如下
+
+```shell
+$ whereis pod
+pod: /Users/wesley_chen/.xxx/bin/pod
+$ whereis -a pod
+pod: /Users/wesley_chen/.xxx/bin/pod /Users/wesley_chen/.rvm/gems/ruby-2.6.3/bin/pod /Users/wesley_chen/.rvm/rubies/ruby-2.6.3/bin/pod
+```
+
+
+
+#### c. which
+
+which用于在PATH环境变量中，定位某个命令的位置。man文档对它的描述，如下
+
+> locate a program file in the user's path
+
+举个例子，如下
+
+```shell
+$ which ls
+ls: aliased to ls -G
+$ /usr/bin/which ls
+/bin/ls
+$ PATH=/bin:/bin /usr/bin/which -a ls
+/bin/ls
+/bin/ls
+$ /usr/bin/which -s ls
+$ echo $?
+0
+$ /usr/bin/which -s fakecommand
+$ echo $?                      
+1
+```
+
+* `-a`选项，显示匹配命令所有找到的路径
+* `-s`选项，不显示输出。用于直接检查结果
+
+如果shell函数和命令同名，则使用which检查不出来。举个例子，如下
+
+```shell
+#!/usr/bin/env bash
+
+which pod
+source ./which_dummy_exportee.sh
+which pod # Note: now pod is an actual function, but which still display the pod command
+# pod install/update
+type pod
+```
+
+说明
+
+> 可以使用type检查shell函数
+
+
+
+#### d. type
+
+type命令显示某个命令的类型，内置命令、外部命令、别名、函数还是位置参数等。举个例子，如下
+
+```shell
+$ ./type_show_command_type.sh 
+# external command
+ls is /bin/ls
+# builtin command
+cd is a shell builtin
+# external command
+pod is /path/to/pod
+# function
+pod is a function
+pod () 
+{ 
+    pod "$@"
+}
+```
+
+> 示例代码，见type_show_command_type.sh
+
+
+
+
+
 ## 附录
 
 ### 1、MacOS常用使用技巧
