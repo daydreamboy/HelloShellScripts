@@ -1,5 +1,11 @@
 platform :ios, '10.0'
 
+def main_pods
+  # do something
+end
+
 target 'HelloFishhook' do
   pod 'fishhook', :path => './fishhook/fishhook.podspec'
+  main_pods
 end
+
