@@ -722,6 +722,18 @@ echo "will not out put something if any above command failed"
 $ grep [options] <pattern> <path/to/folder or file>
 ```
 
+根据man文档，命令退出状态码，有三种类型：
+
+> The **grep** utility exits with one of the following values:
+>
+> 0   One or more lines were selected.
+>
+> 1   No lines were selected.
+>
+> \>1  An error occurred.
+
+0表示匹配成功，1表示没有匹配到结果，其他则表示存在异常。
+
 
 
 #### b. 常用选项
@@ -871,6 +883,24 @@ echo $result
 $ echo "Hello, world" | grep -e "ll" -o   
 ll
 ```
+
+
+
+##### `-F`
+
+不做正则匹配，参数作为普通字符串。
+
+举个例子，如下
+
+```shell
+$ echo "Hello*\nWorld" | grep "o*" 
+Hello*
+World
+$ echo "Hello*\nWorld" | grep -F "o*"
+Hello*
+```
+
+这里使用`-F`选项，参数`o*`作为普通字符串匹配。
 
 
 
