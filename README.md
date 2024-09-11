@@ -732,7 +732,7 @@ $ grep [options] <pattern> <path/to/folder or file>
 >
 > \>1  An error occurred.
 
-0表示匹配成功，1表示没有匹配到结果，其他则表示存在异常。
+0表示匹配成功（至少找到一行可以匹配），1表示没有匹配到结果，其他则表示存在异常。
 
 
 
