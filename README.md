@@ -692,6 +692,16 @@ bar
 
 
 
+### (3) $?
+
+
+
+### (4) $!
+
+`$!`表示最近一个放入后台执行的进程的pid。[官方文档](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html#index-_0024_0021)描述，如下
+
+> Expands to the process ID of the job most recently placed into the background, whether executed as an asynchronous command or using the `bg` builtin
+
 
 
 
