@@ -694,6 +694,10 @@ bar
 
 ### (3) $?
 
+`$?`表示最近一个前台命令执行后的结果。[官方文档](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html#index-_0024_0021)描述，如下
+
+> Expands to the exit status of the most recently executed foreground pipeline.
+
 
 
 ### (4) $!
